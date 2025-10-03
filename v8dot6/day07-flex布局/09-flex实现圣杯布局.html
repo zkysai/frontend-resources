@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>flex实现圣杯布局：两侧固定，中间自适应</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .box{
+      display: flex;
+      width: 80%;
+      height: 200px;
+      margin: 0 auto;
+      border: 1px solid black;
+    }
+
+    .left,
+    .right{
+      width: 100px;
+      background-color: skyblue;
+    }
+
+    .center{
+      flex: 1; /*中间占一份，总宽度800px ，减去左边100px，右边100px,将固定的减去了剩下的占一份，意思就是全占*/
+      background-color: purple;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+    <!--
+        flex实现圣杯布局：两侧固定，中间自适应
+    -->
+
+  <div class="box">
+    <div class="left">左</div>
+    <div class="center">中</div>
+    <div class="right">右</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var a = 12;
+        if (true){
+            console.log(a); //Uncaught ReferenceError: Cannot access 'a' before initialization
+            let a = 13; //基于LET创建变量，会把大部分{}当做一个私有的块级作用域（类似于函数的私有作用域），
+                        //在这里也是重新检测语法规范，看一下是
+                        //否是基于新语法创建的变量，如果是按照新语法规范来解析
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+/*各个网页相同模块的重复样式，例如：头部，底部*/
+
+/*设置版心：版心各个页面都会用到，因此可以放在common.css文件中*/
+.wrapper{
+  position: relative;
+  width:1240px;
+  margin:0 auto;
+}
+
+/*快捷导航*/
+.shortcut{
+  /*width默认100%，不用加，因为要的是通栏，宽度要和浏览器一样大*/
+  height: 52px;
+  background-color: #333;
+}
+
+.shortcut .wrapper{
+  height: 100%;
+  /*background-color: pink;*/
+}
+
+.shortcut .wrapper ul{
+  float:right;
+}
+
+.shortcut .wrapper li{
+  float:left;
+  line-height: 52px;
+}
+
+.shortcut .wrapper a{
+  padding: 0 16px;
+  border-right: 1px solid #666;
+
+  font-size: 14px;
+  color: #dcdcdc;
+}
+
+/* 清除a的边框线：最后一个li里面的a*/
+.shortcut .wrapper li:last-child a{
+  border-right: 0;
+}
+
+.shortcut .wrapper a span{
+  display: inline-block;
+  margin-right: 8px;
+  width: 11px;
+  height: 16px;
+  background:url("../imgs/sprites.png") no-repeat -160px -70px;
+  vertical-align: middle;
+}
+
+/*===头部===*/
+.header{
+  /*这里margin 写 0 ,会覆盖掉 .wrapper 里面的 margin  auto
+  为什么会覆盖？？？ 因为 .header 写在 .wrapper的下面。
+  */
+  /*margin:30px 0;*/
+  margin:30px auto;
+  height: 70px;
+  --background-color: skyblue;
+}
+
+.header .logo{
+  float:left;
+  width:207px;
+  height:70px;
+  /*background-color: green;*/
+}
+/*logo搜索引擎优化做法*/
+.logo h1{
+  width:207px;
+  height:70px;
+}
+
+.logo h1 a{
+  display: block;
+  width:207px;
+  height:70px;
+  background-image: url("../imgs/logo.png");
+  background-size: contain;
+  /*目的：让h1里面的字看不见*/
+  font-size: 0;
+}
+
+/*导航*/
+.header .nav{
+  float:left;
+  margin-left:70px;
+  height: 70px;
+  --background-color: pink;
+}
+
+.nav ul li{
+  float:left;
+  margin-right: 48px;
+  line-height: 70px;
+}
+
+.nav li a{
+  padding-bottom: 7px; /*知识点：保证a标签在默认状态和 hover状态 都有7个px 的 下内边距 ，
+    保证a标签在默认状态下位置是固定的 ，在hover的时候只是变了一个颜色 和 加了一个下边框。
+  */
+  --background-color: #fff; /*测试颜色*/
+}
+
+.nav li a:hover{
+  color: #27ba9b;
+  border-bottom: 1px solid #27ba9b;
+  --background-color: #fff;/*测试颜色*/
+ /* padding-bottom: 7px;*/
+}
+
+/*搜索框*/
+.header .search{
+  position: relative;
+  float:left;
+  margin-left:32px;
+  margin-top: 24px;
+  width: 172px;
+  height: 30px;
+  /*background-color: sienna;*/
+  border-bottom: 2px solid #e7e7e7;
+}
+
+.search input{
+  padding-left: 31px;
+  width: 172px;
+  height: 28px;
+}
+
+/*重点修改 placeholoder中的 字体颜色和效果*/
+.search input::placeholder{
+  font-size: 14px;
+  color:#ccc;
+}
+
+.search span{
+  position: absolute;
+  /*display: inline-block;*/
+  left:2px;
+  top:0;
+  width:18px;
+  height: 18px;
+  background: url("../imgs/sprites.png") no-repeat -79px -69px;
+}
+
+.header .shoppingCart{
+  position: relative;
+  float:left;
+  /*快捷键 ： ml*/
+  margin-top: 28px;
+  margin-left:15px;
+  width: 23px;
+  height: 23px;
+  --background-color: orangered;
+  background: url("../imgs/sprites.png") no-repeat -120px -69px;
+}
+
+.shoppingCart span {
+  /*绝对定位的元素 具备 行内块 元素的特点*/
+  position: absolute;
+  /*right:-13px;
+  top:-6px;*/
+  right: -11px;
+  top: -4px;
+  --display: block;
+  width: 20px;
+  height: 15px;
+  line-height: 15px;
+  background-color: #e26237;
+  color: white;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* ===底部 开始===*/
+.footer .top{
+  padding-top: 79px;
+  height: 302px;
+  /*background-color: pink;*/
+}
+
+.footer .top dl{
+  float:left;
+  width:25%;
+  text-align: center;
+  font-size: 0;
+}
+
+.footer dl dt{
+  height: 50px;
+  text-align: center;
+  font-size: 16px;
+  color:#999;
+}
+
+.footer .top .customer-service dd,
+.footer .top .us dd{
+  display: inline-block;
+  margin-right: 7px;
+  /*float:left;*/
+  width: 92px;
+  height: 92px;
+  border:1px solid #eee;
+}
+.footer .top .customer-service dd{
+  padding-top:21px ;
+}
+
+.footer .top .us dd{
+  padding-top:18px ;
+}
+
+
+.footer .customer-service a,
+.footer .us a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: #999;
+  /*background-color: pink;*/
+}
+
+
+/*精灵图*/
+.footer .customer-service a::before{
+  display: block;
+  content:'';
+  padding-bottom: 7px;
+  margin: 0 auto;
+  /*width:100%;*/
+  /*height: 59px;*/
+  width: 29px;
+  height: 27px;
+  /*background-color: pink;*/
+  background-image: url(../imgs/sprites.png);
+  background-repeat: no-repeat;
+}
+
+.footer .customer-service dd:nth-of-type(1) a::before{
+  /*background-color: pink;*/
+  background-position: -250px -70px;
+}
+
+.footer .customer-service dd:nth-of-type(2) a::before{
+  background-position: -350px -70px;
+}
+
+/* footer的 联系我们*/
+.footer .us a::before{
+  display: block;
+  content:'';
+  margin: 0 auto;
+  padding-bottom: 11px;
+  width: 36px;
+  height: 29px;
+  background-color: pink;
+}
+
+.footer .us dd:nth-of-type(1) a::before{
+  background: url(../imgs/sprites.png) no-repeat -250px -15px;
+}
+
+.footer .us dd:nth-of-type(2) a::before{
+  background: url(../imgs/sprites.png) no-repeat -350px -15px;
+}
+
+/*鼠标经过 切换图片*/
+.footer .customer-service dd:nth-of-type(1):hover a::before{
+  background-position: -205px -70px;
+}
+
+/*过渡动画：谁做过渡（动画）给谁加transition,给::before加过渡*/
+.footer .customer-service a::before,
+.footer .us a::before{
+  transition: all .4s;
+}
+
+/*下载模块*/
+.footer .download .qrcode{
+  width: 116px;
+  height: 116px;
+  border:2px solid #f7f7f7;
+}
+
+.footer .qrcode img{
+  width:100%;
+  height: 100%;
+}
+
+.footer .bottom{
+  background-color: #333;
+  height: 343px;
+}
+
+.footer .bottom .wrapper{
+  width: 1393px;
+}
+/* ===底部 结束===*/
+
+
+
+
+
+
+
+

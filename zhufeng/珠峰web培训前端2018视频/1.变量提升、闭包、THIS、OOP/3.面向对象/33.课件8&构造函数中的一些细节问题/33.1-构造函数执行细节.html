@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function Fn(name,age){
+            this.name = name;
+            this.age = age;
+
+            //上一个案例中，没有写return，
+            // 这个案例中我们写了return 基本数据类型
+            // 那么new一个函数() 会返回什么? 返回的还是该类new出来的那个实例。
+            return 1;
+            // return 'aaa';
+            // return true;
+        }
+        //构造函数执行
+        var f1 = new Fn('xxx',20);
+        console.log(f1);  //Fn{name: 'xxx', age: 20}
+    </script>
+</body>
+</html>

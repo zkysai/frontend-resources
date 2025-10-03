@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>条件判断下的变量提升4</title>
+</head>
+<body>
+    <script>
+       /**
+        * 当全局作用域形成之后，代码执行之前，什么都不用想，先做全局作用域下的变量提升（也就是预解析）
+        *
+        * 1. 没有带VAR的变量，也没有FUNCTION函数，不进行变量提升。
+        * 2. 自执行函数(没有名字)不进行变量提升。
+        * */
+        f = function(){
+            return true;
+        };
+        g = function(){
+            return false;
+        };
+        //自执行函数写法
+        ~function (){
+            if (g() && [] == ![]){
+                f = function (){
+                    return false;
+                }
+            }
+            function g(){
+                return true;
+            }
+        }();
+        console.log(f()); //false
+        console.log(g()); //false
+     </script>
+</body>
+</html>

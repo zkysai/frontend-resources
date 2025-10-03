@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tudou遮罩</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+
+        .pic{
+            position: relative;
+            margin:10px auto;
+
+            width:448px;
+            height: auto;
+        }
+
+        .mask{
+            position: absolute;
+            width: 448px;
+            height: 252px;
+            background-color: rgba(30,30,30,0);
+        }
+
+        .pic img {
+            vertical-align: middle;
+        }
+
+        .mask:hover{
+            background: rgba(30,30,30,0.4) url("imgs/arr.png") no-repeat center center;
+        }
+    </style>
+</head>
+<body>
+    <div class="pic">
+        <div class="mask"></div>
+        <img src="imgs/tudou.jpg" alt="">
+    </div>
+    <div class="pic">
+        <div class="mask"></div>
+        <img src="imgs/tudou.jpg" alt="">
+    </div>
+    <div class="pic">
+        <div class="mask"></div>
+        <img src="imgs/tudou.jpg" alt="">
+    </div>
+    <div class="pic">
+        <div class="mask"></div>
+        <img src="imgs/tudou.jpg" alt="">
+    </div>
+</body>
+</html>

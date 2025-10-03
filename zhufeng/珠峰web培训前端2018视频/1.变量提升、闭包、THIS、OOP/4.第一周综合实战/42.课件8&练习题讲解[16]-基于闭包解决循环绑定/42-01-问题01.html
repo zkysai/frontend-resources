@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <!--#btn-box>input[type=button,value=button_$]*5-->
+    <div id="btn-box">
+        <input type="button" value="button_1">
+        <input type="button" value="button_2">
+        <input type="button" value="button_3">
+        <input type="button" value="button_4">
+        <input type="button" value="button_5">
+    </div>
+
+    <script>
+        let _btnBox = document.querySelector('#btn-box');
+        let _inputs = document.querySelectorAll('#btn-box > input');
+
+        //var i =0; 弹出的结果都是5
+        for(var i=0,len = _inputs.length;i<len;i++){
+            _inputs[i].addEventListener('click',function(){
+                alert(i);
+            });
+        }
+        /**
+         * 1. 为啥不行？
+         * 事件绑定是"异步编程"，当触发点击行为，绑定的方法执行的时候，外层循环已经结束；
+         * 方法执行产生私有作用域，用到变量i，不是私有的变量，按照作用域链的查找机制，
+         * 找到的是全局下的i（此时全局的i已经成为循环最后一次的结果5)
+         */
+    </script>
+</body>
+</html>

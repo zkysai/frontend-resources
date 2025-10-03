@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        console.log(num);  //报错
+        num = 2;
+        //只有var会提升，隐式全局变量并不会提升，所以结果和例1不同，并不是undefined
+    </script>
+</body>
+</html>

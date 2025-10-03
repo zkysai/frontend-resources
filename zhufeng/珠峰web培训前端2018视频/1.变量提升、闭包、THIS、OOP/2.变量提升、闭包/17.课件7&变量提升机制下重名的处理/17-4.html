@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /**
+         * 全局下的变量提升：
+         *  声明并赋值一个 fn = 函数对象  //function fn(){console.log(1);}
+         *
+         *  又遇到一个fn函数，就不用再声明了，直接重新赋值。
+         *                  = 函数对象  //function fn(){console.log(2);}
+         *                  ……
+         */
+        fn(); //4
+        function fn(){console.log(1);}
+        fn(); //4
+        function fn(){console.log(2);}
+        fn(); //4
+        var fn=100;//=>带VAR的在提升阶段只把声明处理了，赋值操作没有处理，所以在代码执行的时候需要完成赋值FN=100
+        fn(); //报错 Uncaught TypeError: fn is not a function
+        function fn(){console.log(3);}
+        fn();
+        function fn(){console.log(4);}
+        fn();
+    </script>
+</body>
+</html>

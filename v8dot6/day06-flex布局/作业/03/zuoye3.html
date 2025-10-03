@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul{
+      list-style: none;
+    }
+
+    img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    .jd-box{
+      width: 1214px;
+      height: 459px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding-left: 29px;
+      padding-top: 32px;
+    }
+
+    .jd-container{
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+
+      width: 1150px;
+      height: 390px;
+    }
+
+    .jd-container div{
+      background-color: #fff;
+      width: 350px;
+    }
+
+    .jd-container div ul{
+      display: flex;
+      justify-content: space-between;
+      width: 350px;
+      height: 390px;
+      flex-wrap: wrap;
+    }
+
+    .jd-container div ul li{
+      width:170px;
+      height: 190px;
+    }
+
+    .jd-container div ul li:nth-child(n+3){
+      align-self: flex-end;
+    }
+
+    .jd-container div ul a{
+      display: block;
+      width:170px;
+      height: 190px;
+    }
+  </style>
+</head>
+<body>
+<div class="jd-box">
+  <div class="jd-container">
+    <div>
+      <ul>
+        <li><a href="javascript:;"><img src="./imgs/left01.png" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./imgs/left02.png" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./imgs/left03.png" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./imgs/left04.png" alt=""></a></li>
+      </ul>
+    </div>
+    <div>
+      <img src="./imgs/center.png" alt="">
+    </div>
+    <div>
+      <ul>
+        <li><a href="javascript:;"><img src="./imgs/right01.png" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./imgs/right02.png" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./imgs/right03.png" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./imgs/right04.png" alt=""></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

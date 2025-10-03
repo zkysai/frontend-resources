@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+
+    /* .clearfix::before 作用：用于解决外边距塌陷问题*/
+    .clearfix::before,
+    .clearfix::after{
+      content: '';
+      display: table;
+    }
+
+    /*真正清除浮动的标签*/
+    .clearfix::after{
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+
+</body>
+</html>

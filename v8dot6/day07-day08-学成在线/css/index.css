@@ -1,0 +1,254 @@
+/*<======header开始======>*/
+.header{
+  height: 100px;
+  background-color: #fff;
+}
+
+.logo{
+  width: 195px;
+  height: 41px;
+  --background-color: pink;
+}
+
+.header .wrapper{
+  display: flex;
+  padding-top: 29px;
+  /*padding-bottom: 30px;*/
+}
+
+.logo a{
+  display: block;
+  height: 41px;
+  background-image: url('../imgs/logo.png');
+  font-size: 0;  /*隐藏a标签中的文字*/
+}
+
+/*====导航开始====*/
+.nav{
+  margin-left: 102px;
+}
+
+.nav ul{
+  display: flex;
+}
+.nav li{
+  height: 41px;
+  margin-right: 20px;
+}
+
+.nav li:last-child{
+  margin-right: 0;
+}
+
+.nav li a{
+  display: block;
+  padding: 6px 8px;
+
+  font-size: 19px;
+}
+
+.nav li a.active{
+  border-bottom: 2px solid #00a4ff ;
+}
+
+.nav li a:hover{
+  border-bottom: 2px solid #00a4ff ;
+}
+/*====导航结束====*/
+
+/*====搜索开始====*/
+.search{
+  position: relative;
+  width: 412px;
+  height: 40px;
+  --background-color: pink;
+  margin-left: calc(96px - 8px);
+}
+
+.search input{
+  width: 100%;
+  height: 100%; /*高40px*/
+  background-color: #f3f5f7;
+  border-radius: 20px; /*圆角是高的一半*/
+  color: #999;
+  padding-left: 19px;
+  padding-right: 35px;
+}
+
+.search span{
+  position: absolute;
+  left:384px;
+  top:12px;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background: url("../imgs/btn-search.png") no-repeat center/cover;
+}
+
+/*====搜索结束====*/
+
+/*====用户开始====*/
+.user{
+  margin-left: 32px;
+}
+.user a{
+  display: flex;
+  margin-top: 4px;
+  height: 30px;
+}
+
+.user img{
+  width: 30px;
+  border-radius: 50%;
+}
+
+.user span{
+  margin-left:7px;
+  align-self: center;
+  font-size: 16px;
+  #color: #666;
+  height: 23px;
+  line-height: 23px;
+}
+/*====用户结束====*/
+/*======header结束======*/
+
+/*======banner开始======*/
+.banner{
+  background-color: #0092cb;
+}
+
+.banner .wrapper{
+  display: flex;
+  /*主轴对齐方式*/
+  justify-content: space-between;
+  /*侧轴对齐方式*/
+ /* align-items: center;*/
+  height: 420px;
+  background: url(../uploads/banner.png) no-repeat center /contain;
+}
+
+.banner .left{
+  width: 191px;
+  background-color: rgba(0,0,0,.42);
+}
+
+.banner .right{
+  width: 218px;
+  height: 305px;
+  align-self: center;
+  background-color: green;
+  margin-top: 2px;
+}
+
+.banner .sidebar{
+  padding: 3px 0;
+}
+
+.banner .sidebar a{
+  position: relative;
+  display: block;
+  padding:0 20px;
+  height: 46px;
+  line-height: 46px;
+  color: #fff;
+}
+
+.banner .sidebar a:hover{
+  color: #00a4ff;
+  background-color:rgba(0,0,0,.3);
+}
+
+.banner .sidebar a.active{
+  color: #00a4ff;
+}
+
+.banner .sidebar a::after{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background:url("../imgs/right-arrow.png") no-repeat center;
+}
+
+.banner .sidebar a.active::after{
+  background:url("../imgs/right-arrow-active.png") no-repeat center;
+}
+
+.banner .sidebar a:hover::after{
+  background:url("../imgs/right-arrow-active.png") no-repeat center;
+}
+
+/*====右侧课程开始====*/
+.banner .right{
+  width: 218px;
+  height: 305px;
+  border-radius: 10px;
+  background-color: #209dd5;
+  padding-top:18px;
+}
+
+.banner .right h3{
+  height: 31px;
+  color: #fff;
+  font-size: 15px;
+  padding-left: 15px;
+  padding-bottom: 9px;
+}
+
+.banner .content{
+  height: 257px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 3px 14px 14px 14px;
+}
+
+.banner .content dl{
+  padding-top:11px;
+}
+
+.banner .content dt{
+  font-weight: 700;
+  width: 190px;
+  height: 20px;
+  color:#333;
+  font-size: 14px;
+}
+
+.banner .content dd{
+  padding:8px 0;
+  width: 190px;
+  height: calc(17px + 8px + 8px); /*因为设置了box-size:border-box;*/
+  color: #00a4ff;
+  font-size: 12px;
+  border-bottom: 2px solid #e0e0e0; /*边框给DL标签最合适*/
+}
+
+.banner .content span{
+  color: #7d7d7d;
+}
+
+.banner .content a{
+  display: block;
+  margin-top: 14px;
+  text-align: center;
+  width:190px;
+  height:32px;
+  line-height: 32px;
+  background-color: #00a4ff;
+  border-radius: 15px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer ;
+}
+
+.banner .content a:hover{
+  background-color: #0D98E5;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+}
+/*====右侧课程结束====*/
+/*<======banner结束======>*/
+

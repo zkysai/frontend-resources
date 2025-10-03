@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /**
+         * 形成私有作用域后三步骤：
+         * 1，形参赋值
+         * 2，变量提升
+         * 3，代码执行
+         *
+         * 带VAR/FUNCTION 声明的 和 形参 都是私有变量，都存储在变量环境中。
+         *
+         */
+        /**
+         * 12,undefined,14
+         * 20,20,20
+         * 12,13,20
+         */
+        var a = 12,
+            b = 13,
+            c = 14;
+        function fn(a){
+            console.log(a,b,c); //12 undefined 14
+            var b = c = a = 20;
+            console.log(a,b,c);
+        }
+        fn(a);
+        console.log(a,b,c);
+    </script>
+</body>
+</html>

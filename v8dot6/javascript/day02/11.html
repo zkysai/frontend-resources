@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /**
+     *在JavaScript中，作用域链是指在查找变量时，JavaScript引擎会沿着作用域链向上查找，
+     *直到找到变量或到达全局作用域。理解作用域链对于理解变量的可见性和生命周期至关重要。
+     *
+     * 在下面代码中，innerFunction可以访问innerVar、outerVar和globalVar，因为它们都在作用域链中。
+     */
+    var globalVar = "I am global";
+
+    function outerFunction() {
+      var outerVar = "I am outer";
+
+      function innerFunction() {
+        var innerVar = "I am inner";
+
+        console.log(innerVar); // 输出 "I am inner"
+        console.log(outerVar); // 输出 "I am outer"
+        console.log(globalVar); // 输出 "I am global"
+      }
+      innerFunction();
+    }
+
+    outerFunction();
+  </script>
+</body>
+</html>

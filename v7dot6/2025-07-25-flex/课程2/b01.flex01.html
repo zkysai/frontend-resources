@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    .box{
+      display: flex;
+      flex-direction: row;  /*设置主轴的方向，我们的元素是跟着主轴来排列的*/
+      justify-content: flex-start; /*默认值，设置主轴上的子元素排列方式*/
+      align-items: stretch;/*默认值*/
+      width: 800px;
+      height: 400px;
+
+      background-color: pink;
+    }
+
+    .box span{
+      width: 100px;
+      height: 100px;
+      background-color: deepskyblue;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <span>1</span>
+  <span>2</span>
+  <span>3</span>
+</div>
+</body>
+</html>

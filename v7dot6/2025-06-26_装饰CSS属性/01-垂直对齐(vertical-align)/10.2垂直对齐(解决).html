@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            height:50px;
+            box-sizing: border-box;
+
+            /*浏览器 遇到 行内 和 行内块标签当作文字处理，都是默认按照基线对齐*/
+            vertical-align: middle;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- 案例：vertical-align解决问题 1
+        左边高度大一些，右边高度小一些 :
+            因为有padding 可以 去掉padding 也可以采用box-sizing: border-box; 内减模式
+
+        写了之后高度依然无法对齐。
+
+     -->
+    <input type="text"><input type="button" value="搜索">
+</body>
+</html>

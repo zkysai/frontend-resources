@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /*
+      在ES6中基于LET/CONST等方式创建变量或者函数，不存在变量提升机制。
+
+
+      如果你同时使用function和箭头函数定义了函数,因为function定义的函数有函数声明提升,箭头函数没有,所以在function声明的函数内调用箭头函数会报错
+解决方法:统一使用function,或箭头函数定义,或者将箭头函数直接定义在需要调用的方法内(不推荐)
+
+     */
+    let a = 12;
+    let fn = function(){
+
+    };
+
+    let fn2 = ()=>{
+
+    };
+  </script>
+</body>
+</html>

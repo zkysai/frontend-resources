@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <style>
+        .father{
+            width: 800px;
+            height: 300px;
+            margin:100px auto;
+            border:1px solid #000;
+        }
+
+        .son{
+            width: 200px;
+            height: 100px;
+            background-color: skyblue;
+            transition: all 0.5s;
+        }
+
+        .father:hover .son{
+            /*transform:translate(100px,50px);*/
+            /*
+            100% ： 取的是 son div 的width
+             50% ： 取的是 son div 的height的 百分之50%
+
+             盒子自身尺寸的百分比
+            */
+            transform:translate(100%,50%);
+        }
+    </style>
+    <title>位移-基本使用</title>
+</head>
+<body>
+    <div class="father">
+        <div class="son">
+
+        </div>
+    </div>
+</body>
+</html>

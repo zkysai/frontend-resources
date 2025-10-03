@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var n = 2;
+        var obj = {
+            n:3,
+            fn:(function (n){
+                n *= 2;
+                this.n += 2;
+
+                var n = 5;
+                return function (m){
+                    this.n *= 2;
+                    console.log(m + (++n));
+                }
+            })(obj.n)
+        };
+
+        var fn = obj.fn;
+        fn(3);
+        obj.fn(3);
+        console.log(n, obj.n);
+    </script>
+</body>
+</html>

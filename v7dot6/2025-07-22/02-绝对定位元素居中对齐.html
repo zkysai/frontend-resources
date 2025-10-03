@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>绝对定位元素居中对齐</title>
+
+    <style>
+        .father{
+            position: relative;
+            width: 800px;
+            height: 300px;
+            margin:100px auto;
+            border:1px solid #000;
+        }
+
+        .son{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 200px;
+            height: 100px;
+            background-color: skyblue;
+            transform:translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box{
+      display: flex;
+      width: 80%;
+      height: 150px;
+      border: 1px solid black;
+      margin: 50px auto;
+    }
+
+    /* 总宽度百分之80，但是3个子盒子 各占 3分之一，不好计算，如何处理？？*/
+    .box div{
+      background-color: pink;
+      flex: 1;
+    }
+    .box div:nth-child(2){
+      background-color: teal;
+      flex: 2;
+    }
+
+    .box2{
+      display: flex;
+      width: 80%;
+      height: 150px;
+      border: 1px solid black;
+      margin: 50px auto;
+    }
+
+    /* 总宽度百分之80，但是3个子盒子 各占 3分之一，不好计算，如何处理？？*/
+    .box2 div{
+      background-color: pink;
+      flex: 1;
+    }
+    .box2 div:nth-child(2){
+      background-color: teal;
+      flex: 2;
+      margin:0 10px ;  /*加了 margin 并不会增加父级 弹性容器的宽度*/
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+  <div class="box2">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+</body>
+</html>

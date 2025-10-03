@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>flex</title>
+  <style>
+    .box{
+      /*父级加上 display:flex;之后,里面所有的孩子就没有显示模式之分了
+      就是说，不分块级，行内，行内块元素了。所有的孩子，不管原来的出身是什么样子，
+      以后统计就叫flex模式。
+      */
+      display: flex;
+      /*flex主轴对齐方式*/
+      /*justify-content: space-between;*/
+      /*justify-content: space-around;*/
+      /*justify-content: space-evenly;*/
+      /*align-items: center;*/
+      width: 1500px;
+      height: 400px;
+      background-color: pink;
+    }
+
+    .box > div{
+      width: 300px;
+      /*height: 200px;*/
+      background-color: purple;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        console.log(fn1);  //打印 函数 fn1
+        console.log(fn2);  //报错：Uncaught ReferenceError: fn2 is not defined
+
+        function fn1(){
+            function fn2(){
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

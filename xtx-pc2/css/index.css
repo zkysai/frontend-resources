@@ -1,0 +1,276 @@
+/*首页CSS样式*/
+.banner{
+  height: 500px;
+  background-color: #f5f5f5;
+}
+
+.banner .wrapper{
+  height: 500px;
+  background-color: pink;
+}
+
+/*侧边导航条*/
+.banner .aside{
+  position: absolute;
+  left:0;
+  top:0;
+
+  width:250px;
+  height: 500px;
+  background-color: rgba(0,0,0,.8);
+}
+.banner .aside li{
+  position: relative;
+  padding-left: 36px;
+  padding-right: 18px;
+  height: 50px;
+  line-height: 50px;
+  font-size:0;
+}
+
+.banner .aside a{
+  font-size:14px;
+  color: white;
+}
+
+.banner .aside a:first-child{
+  font-size:16px;
+  margin-right: 15px;
+}
+
+.banner .aside a:not(first-child){
+  margin-right: 5px;
+}
+
+.banner .aside li:hover{
+  background-color: #27ba9b;
+}
+
+/*li 里面的最后的位置添加箭头
+::after 前面是谁，谁就是这个伪元素标签的爹
+*/
+.banner .aside li::after{
+  position: absolute;
+  right: 18px;
+  top:19px;
+  content:'';
+  width: 6px;
+  height: 11px;
+  background-image: url(../imgs/sprites.png);
+  background-position: -80px -110px;
+}
+
+/*箭头*/
+.banner .prev,.next{
+  position: absolute;
+  top: 228px;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(0,0,0,.2);
+  --opacity: .2;  /*重点：不要用 opacity，opacity属性用于设置整个元素的不透明度，从0.0（完全透明）到1.0（完全不透明）。当一个元素的opacity值被设置时，该元素及其所有子元素都会继承这个透明度*/
+  border-radius: 50%; /*重点，使用百分比*/
+  background-image: url(../imgs/sprites.png);
+}
+
+.banner .prev{
+  left: 260px;
+  --background-position: 0 -70px;  /*重点*/
+  background-position: 14px -60px;
+}
+
+.banner .next{
+  right: 10px;
+  background-position: -22px -60px;
+}
+
+/*圆点*/
+.banner ol{
+  position: absolute;
+  left: 680px;
+  top:459px;
+ /* width:120px;*/
+  height:10px;
+  /*background-color: pink;*/
+}
+
+.banner ol li{
+  float:left;
+  margin-right: 14px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,.43);
+  cursor: pointer;
+}
+
+.banner ol li.current{
+  background-color: #fff;
+}
+
+/*新鲜好物*/
+.goods .hd{
+  height: 114px;
+  line-height: 114px;
+  /*background-color: pink;*/
+}
+
+.goods .hd h2{
+  float: left;
+  font-size: 29px;
+  color: #333;
+  font-weight: 400;
+  height: 100%;
+}
+
+.goods .hd h2 span{
+  float:right; /*解决span标签高度超出的问题*/
+  margin-left: 34px;
+  font-size: 16px;
+  color: #999;
+}
+
+.goods .hd a{
+  float:right;
+  margin-right: 20px;
+  color: #999;
+}
+
+.goods .hd a::after{
+  position: absolute;
+  right:0;
+  top:52px;
+  content:'';
+  width:7px;
+  height: 13px;
+  --background-color: green;
+  background-image: url(../imgs/sprites.png);
+  background-position: 0 -110px;
+}
+
+.goods .bd li{
+  position: relative;
+  float:left;
+  margin-right: 8px;
+  width:304px;
+  height: 405px;
+  text-align: center;
+  background-color: #f0f9f4;
+}
+
+.goods .bd li:last-child{
+  margin-right: 0;
+}
+
+.goods .bd li a{
+  display: block;
+}
+
+.goods .bd li a img{
+  width:304px;/*图片的特点给了一个宽度，高度是等比例缩放*/
+  height: 305px;
+}
+
+.goods .bd li h3{
+  line-height: 100%; /*去掉h3标签的行高*/
+  margin-top: 22px;
+  margin-bottom: 19px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #333;
+}
+
+.goods .bd li div{
+  /*去掉 .goods .bd li 里的 div标签的 行高*/
+  line-height: 100%;
+  font-size: 17px;
+  color: #9a2e1f;
+}
+
+.goods .bd li div span {
+  font-size: 23px;
+}
+
+.goods .bd li b{
+  position: absolute;
+  left:17px;
+  top:18px;
+  width: 28px;
+  height: 51px;
+  border:1px solid #27ba9b;
+  color: #27ba9b;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 2px;
+  line-height: 24px; /*body 标签中，16px/1.5 -> 所有文字的默认行高是1.5倍，缩小一点  */
+}
+
+/*生鲜*/
+.fresh .hd{
+  line-height: 96px;
+  height: 96px;
+  /*background-color: pink;*/
+}
+
+.fresh .hd h2{
+  float: left;
+  margin-top: 34px;
+  line-height: 100%;
+  font-size: 29px;
+  font-weight: 400;
+  color: #333;
+}
+
+.fresh .hd ul {
+  float:right;
+  margin-right: 65px;
+}
+
+.fresh .hd ul li {
+  float:left;
+}
+
+.fresh .hd li a{
+  padding:2px 7px;
+  margin-left: 6px;
+}
+
+.fresh .hd li a:hover{
+  color: #fefbfc;
+  background-color: #27ba9b
+}
+
+
+.fresh .hd .more{
+  float:right;
+  color: #999;
+}
+
+.fresh .hd .more::after{
+  display: inline-block;
+  margin-left: 13px;
+  content:'';
+  width:7px;
+  height: 13px;
+  background-image: url(../imgs/sprites.png);
+  background-position: 0 -110px;
+  vertical-align: middle;
+}
+
+.fresh .bd .left{
+  float:left;
+
+  width: 240px;
+  height: 610px;
+  background-color: skyblue;
+}
+
+.fresh .bd .right{
+  float:right;
+  width: 1000px;
+  height: 610px;
+  background-color: orchid;
+}
+
+
+
+

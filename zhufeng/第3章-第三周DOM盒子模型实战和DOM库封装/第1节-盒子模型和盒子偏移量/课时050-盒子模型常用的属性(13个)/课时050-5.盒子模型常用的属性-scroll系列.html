@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      font-size: 14px;
+    }
+
+    #box3{
+      width:200px;
+      height: 200px;
+      padding:30px;
+      margin: 100px;
+      border: 10px solid green;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="box3">
+    1、scroll系列
+    -> scrollWidth/scrolltHeight：
+    -> 如果容器中的内容没有溢出的情况下，则和clientWidth/clientHeight一模一样
+
+    -> 如果容器中的内容有溢出，我们获取的结果是如下规则：
+    scrollWidth： 真实内容的高度（包含溢出）+ 左填充
+    scrollHeight：真实内容的高度（包含溢出）+ 上填充
+
+    同一个浏览器，我们是否设置overflow='hidden'对于最终的结果是有影响的。
+    不同的浏览器种我们获取的结果也可能不同。
+
+    -> scrollLeft/scrollTop：滚动条卷去的高度和宽度。
+    滚动条在拉动的过程中，有一部分看不到了，看不到的那一部分就是卷去的高度和宽度
+  </div>
+  <script>
+    let _box3 = document.querySelector('#box3');
+
+    //没有设置overflow:hidden;
+    //console.log(_box3.scrollWidth,_box3.scrollHeight); //260 390
+
+    //设置overflow:hidden;
+    console.log(_box3.scrollWidth,_box3.scrollHeight); //260 420
+
+    /**
+     * 1、scroll系列
+     * -> scrollWidth/scrolltHeight：
+     * -> 如果容器中的内容没有溢出的情况下，则和clientWidth/clientHeight一模一样
+     *
+     * -> 如果容器中的内容有溢出，我们获取的结果是如下规则：
+     *    scrollWidth： 真实内容的高度（包含溢出）+ 左填充
+     *    scrollHeight：真实内容的高度（包含溢出）+ 上填充
+     *
+     *    同一个浏览器，我们是否设置overflow='hidden'对于最终的结果是有影响的。
+     *    不同的浏览器种我们获取的结果也可能不同。
+     *
+     * -> scrollLeft/scrollTop：滚动条卷去的高度和宽度。
+     *    滚动条在拉动的过程中，有一部分看不到了，看不到的那一部分就是卷去的高度和宽度
+     */
+  </script>
+</body>
+</html>

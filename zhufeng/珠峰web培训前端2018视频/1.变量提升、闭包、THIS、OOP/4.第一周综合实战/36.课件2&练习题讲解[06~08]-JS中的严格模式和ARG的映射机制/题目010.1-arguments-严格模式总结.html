@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /**
+         * => 1. 在严格模式下不支持使用 "arguments.callee / arguments.callee.caller"
+         * (Uncaught TypeError: 'caller','callee',and 'arguments' properties may not be
+         *   accessed on strict mode functions or the arguments objects for calls to them)
+         *
+         * => 2. 在严格模式下ARGUMENTS 和 形参没有映射机制
+         *
+         * => 3.在非严格模式下，一个对象的属性的名字可以重复，
+         *      但是在严格模式下，一个对象的属性名不能重复，报 duplicate declaration，但是仍然可以执行
+         *
+         * => 4.
+         */
+
+        /*=> 1. 案例1*/
+        ~function (){
+            /**
+             * ƒ (){
+             *    console.log(arguments.callee);
+             *    console.log(arguments.callee.caller);
+             * }
+             */
+            console.log(arguments.callee);
+            console.log(arguments.callee.caller);  //null
+        }();
+
+
+        ~function (){
+            'use strict';
+            /**
+             * Uncaught TypeError: 'caller', 'callee',
+             * and 'arguments' properties may not be accessed on
+             * strict mode functions or the arguments objects for calls to them
+             */
+            // console.log(arguments.callee);  //报错
+            // console.log(arguments.callee.caller); //报错
+        }();
+
+        /*=> 2. 案例2*/
+        ~function(){
+            function fn(x){
+                arguments[0] = 100;
+                console.log(x); //=>100 存在映射机制
+            }
+            fn(10);
+        }();
+
+        ~function(){
+            'use strict';
+
+            function fn(x){
+                arguments[0] = 100;
+                console.log(x); //=>10 不存在映射机制
+            }
+            fn(10);
+        }();
+
+        /*=> 3. 案例3*/
+        ~function (){
+            let obj = {
+                name:'aaa',
+                name:'fbb',
+                age:50
+            };
+
+            console.log(obj.name); //fbb
+        }();
+
+        ~function (){
+            'use strict';
+
+            let obj = {
+                name:'fbb',
+                name:'zwj',
+                age:50
+            };
+
+            console.log(obj.name); //zwj ,提示错误Duplicate declaration，但是仍然可以执行
+        }();
+    </script>
+</body>
+</html>

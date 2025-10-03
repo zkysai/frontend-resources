@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        var num = 2;
+        function f() {
+            num = 1;
+            console.log(num) //1
+            return
+            var num = 3;
+        }
+        f();
+        console.log(num);//2
+
+        /**
+         * 上述代码：解析过程
+         *      var num = undefined;                //第一步：预解析
+         *      f = 函数对象;                        //第二步： 预解析
+         *
+         * 代码执行：
+         * 全部变量 num = 2;  第三步
+         *
+         * f();  第四步：执行f函数,之前 进行预解析
+         * 预解析整个f函数
+         *          function f() {
+         *               //解析过程
+         *               var num = undefined; //此处提升的变量是return后面的
+         *          }
+         *
+         *第五步:执行 f函数中的代码
+         *  function f() {
+         *               num = 1;                      //给局部变量num赋值 = 1
+         *               console.log(num)              //输出局部变量num为  1
+         *               return                        //return 后面的代码不会执行
+         *               num = 3;
+         *          }
+         *
+         * console.log(num);       //第六步：输出全局变量num的结果-->2
+         */
+
+        // 说明：return后面的语句虽然不会执行，但是变量还是会提升，所以f函数执行时，会输出1
+    </script>
+</body>
+</html>

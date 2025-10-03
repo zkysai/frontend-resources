@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      "use strict" //开启严格模式，arguments就没有映射机制了
+      /**
+       * =>JS严格模式
+       * =>在当前作用域的 "第一行" 添加 "use strict" 即可，这样在当前作用域中就开启了JS的严格模式
+       */
+
+      function fn(x,y){
+          /**
+           * 形参
+           *    x=10
+           *    y=undefined
+           * 此时Arguments的结构：
+           * Arguments
+           *    {
+           *      '0':10,
+           *      callee: ƒ
+           *    }
+           */
+
+          var arg = arguments;
+          arg[1] = 300;
+
+          console.log(arg);
+          /*
+          {
+              '0':10,
+              '1':300,
+              length: 1
+          }
+          */
+          console.log(y); //undefined
+          y = 400 ;
+
+          console.log(y); //400
+          console.log(arguments);
+          /**
+           * 0:10
+           * 1:300
+           * length:1
+           */
+      }
+      fn(10);
+
+      /**
+       * 总结：=>ARGUMENTS和形参的映射机制建立在函数执行后形参赋值的一瞬间，此
+       *       时能建立映射机制的建立映射机制，不能建立起来的，以后不管怎么操作都无法
+       *       在建立了
+       */
+    </script>
+</body>
+</html>

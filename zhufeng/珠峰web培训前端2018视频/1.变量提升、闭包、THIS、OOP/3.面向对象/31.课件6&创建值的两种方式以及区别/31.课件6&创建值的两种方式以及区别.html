@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /**
+     * =>基本数据类型基于两种不同的模式创建出来的值是不一样的基于字面量方式创建出来的值是基本类型值
+     * 基于构造函数创建出来的值是引用类型
+     *
+     * =>num2是数字类的实例，num1也是数字类的实例，它只是JS表达数字的方式之一，都可以使用数字类提供的属性和方法
+     */
+    let num1 = 12.5;
+    console.log(num1.toFixed(2)); //12.50
+
+    let num2 = new Number(12.4);
+    console.log(num2.toFixed(2)); //12.40
+
+    console.log(12.1.toFixed(2)); //12.10
+    console.log(typeof num1); //=>"number"
+    console.log(typeof num2); //=>"object"
+  </script>
+</body>
+</html>

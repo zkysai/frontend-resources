@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>flex布局-align-self</title>
+  <style>
+    .box{
+      display: flex;
+      justify-content: space-between;
+      width: 600px;
+      height: 600px;
+      border:1px solid #000;
+      margin: 30px auto;
+    }
+
+    .box div{
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      border-radius: 50%;
+    }
+
+    .box div:nth-child(2){
+      align-self: center;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+</body>
+</html>

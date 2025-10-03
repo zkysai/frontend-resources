@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        /**
+         * 数据类型检测的4种方式：
+         *  1.typeof
+         *  2.instanceof ：检测某一个实例是否隶属于这个类 极其父类
+         *  3.construtor
+         *  4.Object.prototype.toString.call
+         */
+
+
+        function Fn(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        //构造函数执行
+        var f1 = new Fn('xxx',20);
+
+
+
+        //=>in：检测当前对象是否存在某个属性
+        console.log('name' in f1); //true
+        console.log('sal' in f1); //false
+
+        //=>in：检测当前对象是否存在某个属性（不管当前这个属性是对象的私有属性 , 还是公有属性，只要有, 结果就是TRUE）
+        console.log(f1);
+        console.log('toString' in f1); //true toString是它的公有属性
+
+        //=>hasOwnProperty：检测当前属性是否为对象的私有属性（不仅要有这个属性，而且必须还是私有的才可以）
+        console.log( f1.hasOwnProperty('toString')); //false，toString不是f1对象的私有属性
+        console.log( f1.hasOwnProperty('name'));//true
+        console.log( f1.hasOwnProperty('ccc'));//false  f1对象中并没有ccc这个属性 也返回false
+
+        //题目，写一个方法hasPubProperty, 如何检测一个属性是一个对象的公有属性？？
+        console.log('toString' in f1 && !f1.hasOwnProperty('toString')); //true
+
+        /**
+         * function hasPubProperty(obj,attr){
+         *     //=>OBJ:要检测的对象
+         *     //=>ATTR：要检测的属性
+         * }
+         *
+         * hasPubProperty(f, 'toString');
+         */
+    </script>
+</body>
+</html>

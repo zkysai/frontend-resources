@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+    <link rel="stylesheet" href="css/tab.css">
+</head>
+<body>
+    <div id="tabBox">
+        <ul id="navBox">
+            <li>读书</li>
+            <li class="active">电影</li>
+            <li>音乐</li>
+        </ul>
+        <div class="active">热爱读书</div>
+        <div>最新电影</div>
+        <div>精彩音乐</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',function (){
+            const _tabBox = document.querySelector("#tabBox");
+
+            _tabBox.addEventListener('click',function(e){
+
+            });
+        });
+    </script>
+
+    <!--
+        div.tab#tab>(ul#nav>li.active+li*2)+(div.active+div*2)[TAB]
+
+        <div class="tab" id="tab">
+            <ul id="nav">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="active"></div>
+            <div></div>
+            <div></div>
+         </div>
+    -->
+
+</body>
+</html>

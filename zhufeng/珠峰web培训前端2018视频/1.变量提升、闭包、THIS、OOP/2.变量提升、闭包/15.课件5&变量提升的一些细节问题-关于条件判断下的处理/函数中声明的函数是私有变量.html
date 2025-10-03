@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>条件判断下的变量提升4</title>
+</head>
+<body>
+    <script>
+        ~function (){
+            function g(){
+                return true;
+            }
+        }();
+
+        g();  //报错：Uncaught ReferenceError: g is not defined
+     </script>
+</body>
+</html>

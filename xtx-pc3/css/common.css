@@ -1,0 +1,45 @@
+/*设置版心*/
+.wrapper{
+  width: 1240px;
+  margin:0 auto;
+}
+
+/*xtx-shortcut模块*/
+.xtx-shortcut{
+  height: 52px;
+  background-color: #333;
+}
+
+.xtx-shortcut .wrapper{
+  display: flex;
+  /*主轴对齐方式 靠右*/
+  justify-content: flex-end;
+  align-items: center;
+  height: 52px;
+ /* background-color: pink;*/
+  font-size: 14px;
+}
+
+.xtx-shortcut li a{
+  /*改a标签的文字颜色一定要找到a标签 或 对应的标签*/
+  color:#fff;
+}
+
+.xtx-shortcut li a:hover{
+  color:#5EB69C;
+}
+
+.xtx-shortcut li span{
+  /*改a标签的文字颜色一定要找到a标签 或 对应的标签*/
+  color:#999;
+  margin: 0 15px;
+}
+
+
+
+
+
+
+
+
+

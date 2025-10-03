@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /*默认主轴是横向row*
+      /*更改主轴的方向我想要1和2盒子竖着排列*/
+      --flex-direction: column;
+      width: 300px;
+      height: 300px;
+      border:1px solid #000;
+      margin:20px auto;
+    }
+
+    .box div{
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div>1</div>
+    <div>2</div>
+  </div>
+</body>
+</html>

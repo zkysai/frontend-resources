@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      font-size: 14px;
+    }
+
+    #box3{
+      width:200px;
+      height: 200px;
+      padding:30px;
+      margin: 100px;
+      border: 10px solid green;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="box3">
+    //2、关于JS盒子模型属性取值的问题
+    //->我们通过这13个属性值获取的结果永远不可能出现小数，都是整数：浏览器在获取结
+    果的时候，还在原来真实结果的基础上进行四舍五入；
+  </div>
+  <script>
+    let _box3 = document.querySelector('#box3');
+
+
+
+    /**
+     * 关于JS盒子模型属性取值的问题
+     * ->我们通过这13个属性值获取的结果永远不可能出现小数，都是整数：浏览器在获取结
+     * 果的时候，还在原来真实结果的基础上进行四舍五入；
+     */
+  </script>
+</body>
+</html>

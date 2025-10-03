@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>逻辑或的应用场景</title>
+</head>
+<body>
+    <script>
+
+        /**
+         * =>逻辑与 && 和 逻辑或 ||
+         * 1.条件判断中使用它们
+         *  if(1===1&& 2===2）{
+         * =>条件中的&&：两个条件都成立，整体判断条件才会成立
+         * =>条件中的||：只要有一个条件成立，整体判断条件就成立
+         *
+         * 2.在赋值操作中，我们有时也会用它
+         *  var a = 1 || 2; //=>首先，验证1是真假，如果为真，把1赋值给a，如果为假，把2赋值给a
+         *                  //=>"A||B"：先验证A的真假，为真结果是A,为假结果是B
+         *  var b = 1 && 2; //=>"A&&B"：先验证A的真假，为真结果是B,为假结果是A
+         *
+         *  只验证第一个A的值是真还是假 不看第二个。
+         */
+
+        /**
+         * 逻辑或 的用法
+         * 逻辑或的实战应用：形参赋值默认值（初始化形参）
+         */
+        //=> "给形参赋值默认值"：验证传递的参数值，如果没有传递实参，让其默认值为零
+        //方式1：
+        function fn(x,y){
+            if ( x === undefined )
+                x = 0;
+
+            if ( typeof y === 'undefined')
+                y = 0;
+            console.log(x,y); //10 0
+        }
+        fn(10);
+
+        //方式2：
+        function fn2(x,y){
+            x = x || 0; //=>如果x没传递值,x=undefined => x=undefined||0
+            y = y || 0;
+            console.log(x,y); //20 0
+        }
+
+        fn2(20);
+
+        //方式3： ES6语法
+        function fn3(x=0,y=0){
+            console.log(x,y); //30 0
+        }
+
+        fn3(30);
+        fn3(40,null); //输出 40 ,null  传递null，则是null值
+        //传递undefined，浏览器也是按照没有传递值处理的
+        fn3(50,undefined); //输出 50 0 ，传递undefined，则使用默认值
+
+        /**
+         *  逻辑与 的用法
+         */
+        //回调函数：把一个函数作为参数 传递给另一个函数，这样的机制就叫回调函数
+        function fn4(callback){ //传递一个回调函数
+            //如果传递的值是个函数，我们才让其执行
+           /**
+           if (typeof callback ==='function')
+                callback();
+           */
+            //传递一个函数对象，为真，则执行。问题:如果传递的不是函数对象，也可能为真。报错。
+            callback && callback(); //默认callback要不然就传函数，
+        }
+
+        fn4(function (){
+            console.log(1111111111);
+        });
+
+        //fn4(true); //报错：callback is not a function
+    </script>
+</body>
+</html>

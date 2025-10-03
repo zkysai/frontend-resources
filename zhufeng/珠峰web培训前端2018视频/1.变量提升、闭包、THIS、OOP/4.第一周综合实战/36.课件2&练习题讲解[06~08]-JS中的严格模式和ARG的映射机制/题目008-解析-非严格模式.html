@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /**
+         * window全局作用域
+         *    变量提升：
+         *      var a = undefined;
+         *      var b = aaafff000;
+         *    代码执行：
+         *      a = 4;
+         *      b(1,2,3);执行
+         *
+         */
+        var a = 4;
+        function b(x, y,a){
+            console.log(arguments);
+            /**
+             * 第1步：形参赋值：
+             *      var x = 1;
+             *      var y = 2,
+             *      var a = 3
+             * 第2步：变量提升 无
+             */
+            console.log (a) ; //=>3
+            arguments[2]=10; //=>把传递的第三个实参值修改为10，此时第三个形参变量a也会受到影响
+            console.log(a) ; //=>10
+        }
+
+        a = b(1, 2, 3);  //=>a=b(1,2,3)执行的结果 => a=undefined [函数b中没有编写return，所以默认函数的返回值是undefined]
+        console.log(a) ; //undefined
+
+        /**
+         * arguments 是一个类数组： 函数内置的实参集合，不管是否设置形参，传递的实参值在这个集合中都存在，
+         *    结构：
+         *     {
+         *        '0':1,
+         *        '1':2,
+         *        '2':3,
+         *        length:3,
+         *        callee: b //指函数本身
+         *    }
+         *
+         *    在JS非严格模式下，函数中的形参变量和ARGUMENTS存在映射机制（映射相互之间影响）
+         *
+         * 假设：第一个形参变量值修改为100，那么arguments[0]的值也跟着修改为100
+         *      那么arguments[1]的值修改为200，那么第二个形参变量y的值也会跟着变为200
+         *      ...
+         *      这就是形参和arguments，在JS非严格模式下的映射关系。
+         *
+         */
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+  <script>
+  /*
+    预解析时，当变量和函数同名时，优先留下函数的值（不管谁前或后，函数优先级更高）
+   */
+    console.log(a);
+  /**
+   * ƒ a(){
+   *       console.log('======');
+   *     }
+   */
+
+    var a = 2;
+    function a(){
+      console.log('======');
+    }
+    console.log(a); //2
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /**
+         * 全局词法环境
+         * a = 10
+         * b = 10
+         */
+        let a = 10,
+            b = 10;
+        /*
+            <=> 等价 let a = 10;
+                    let b  = 10;
+         */
+        let fn = function (){
+            let a = b = 20;
+            /**
+             * <=> 等价
+             * let a = 20; //在私有作用域（上下文环境）中的词法环境声明并赋值 a = 20
+             * b = 20;  //=> 修改全局词法环境中 b的值 10 => b = 20
+             */
+            console.log(a, b); // 20,20
+        };
+        fn();
+        console.log(a, b); //10,20
+    </script>
+</body>
+</html>

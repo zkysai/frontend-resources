@@ -1,0 +1,68 @@
+/*基础公共样式*/
+
+/*去掉常见标签的 margin 和 padding*/
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd,input{
+    margin:0;
+    padding:0;
+}
+
+/*内减模式*/
+*{
+    box-sizing: border-box;
+}
+
+body{
+    /*1.5倍行高*/
+    font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
+    "Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei", sans-serif;
+    color: #333;
+}
+
+/*去掉a标签默认下划线，并设置默认文字颜色*/
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+/*设置img的垂直对齐方式位居中对齐，去掉img默认下间隙*/
+img{
+    vertical-align: middle;
+}
+
+/*去掉默认列表样式*/
+ul,ol{
+    list-style: none;
+}
+
+/*去掉默认的斜线效果*/
+em,i {
+    font-style: normal;
+}
+
+/*去掉input默认样式*/
+input{
+    border: none;
+    outline: none;
+    color: #333;
+}
+
+/*左浮动*/
+.fl{
+    float:left;
+}
+
+/*右浮动*/
+.fr{
+    float:right;
+}
+
+/*双尾元素清除浮动*/
+.clearfix::before,
+.clearfix::after{
+    content:'';
+    display: table;
+}
+
+.clearfix::after{
+    clear:both;
+}

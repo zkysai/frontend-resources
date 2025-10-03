@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /*
+      在ES6中基于LET/CONST等方式创建变量或者函数，不存在变量提升机制。
+     */
+
+    //注意：全局作用域下，let声明的变量和函数，没有变量提升了。
+    //代码开始执行，a=10，b=10
+    //       -> fn函数声明赋值
+    //       -> fn执行，形成私有作用域
+    //              -> let声明的，也没有变量提升
+    //              -> console.log(a, b); //报错，Cannot access 'a' before initialization
+    //                 =>但是有作用域链 应该往上找？为什么报错呢？
+    let a ;
+
+    console.log(a);  //undefined
+  </script>
+</body>
+</html>

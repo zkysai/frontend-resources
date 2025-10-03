@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var c = 1;
+        function d(c) {
+            console.log(c); //3
+            var c = 2;
+        }
+        d(3);
+        console.log(c);  //1
+
+        /**
+         * var c；//全局
+         * function d (c) {
+         *      //c形参可以看作：var c= 实参
+         *      var c;// 形参
+         *      var c；// 下面的c = 2的变量
+         *      c = 3 // 实参
+         *      console.log(c); // 3
+         *      c=2
+         * c = 1;// 全局
+         * d(3) ;
+         * console.log(c); // 1
+         */
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function fun(){
+            this.a =0;
+            this.b= function(){
+                console.log(this.a);
+            }
+        }
+
+        fun.prototype = {
+            b:function(){
+                this.a = 20;
+                console.log(this.a);
+            },
+            c:function(){
+                this.a = 30;
+                console.log(this.a);
+            }
+        };
+        var my_fun = new fun();
+        my_fun.b() ; //=>0
+        my_fun.c(); //=>30
+
+        console.log(my_fun.hasOwnProperty('c')); //=>false
+        console.log(fun.prototype.hasOwnProperty('c')); //=>true
+    </script>
+</body>
+</html>

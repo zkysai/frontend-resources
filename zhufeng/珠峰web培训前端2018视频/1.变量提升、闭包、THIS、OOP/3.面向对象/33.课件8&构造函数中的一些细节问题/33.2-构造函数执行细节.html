@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function Fn(name,age){
+            this.name = name;
+            this.age = age;
+
+            // 这个案例中我们写了return 引用数据类型
+            // 那么new一个函数() 会返回什么? 返回的就不是new出来的对象了。
+            return {name:'范冰冰'};
+        }
+        //构造函数执行
+        var f1 = new Fn('xxx',20);
+        /**
+         *  {name: '范冰冰'}
+         *      name: "范冰冰"
+         *      [[Prototype]]: Object
+         */
+        console.log(f1);
+
+        /*
+        *
+        * [总结]构造函数执行，不写RETURN，浏览器会默认返回创建的实例，
+        *   但是如果我们自己写了RETURN?
+        *       ->1.return是的一个基本值，返回的结果依然是类的实例，没有受到影响
+        *       ->2.如果返回的是引用值，则会把默认返回的实例覆盖，此时接收到的结果就不在是当前类的实例了
+        *
+        *
+        * => 构造函数执行的时候，尽量减少RETURN的使用，防止new出来的实例被覆盖.
+        * */
+
+
+        function Fn2(){
+            var n = 10;
+            this.m = n;
+            return;//=>这样RETURN是结束代码执行的作用，并且不会覆盖返回的实例
+            console.log(1) ;
+        }
+
+
+        var f2= new Fn2();
+        console.log(f2) ; //Fn2{m: 10}
+
+
+
+        var f3 = new Fn2;//=>new Fn2;在构造函数执行的时候，如果不需要传递实参，我们可以省略小括号，意思还是创建实例（和加小括号没有区别）
+        console.log(f3) ; //Fn2{m: 10}
+
+
+        function Fn3(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        var f4 = new Fn3; //=>new Fn3()
+        console.log(f4);  //Fn3 {name: undefined, age: undefined}
+    </script>
+</body>
+</html>

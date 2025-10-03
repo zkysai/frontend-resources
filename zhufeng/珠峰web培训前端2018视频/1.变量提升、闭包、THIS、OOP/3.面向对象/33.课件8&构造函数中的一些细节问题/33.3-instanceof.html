@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        /**
+         * 数据类型检测的4种方式：
+         *  1.typeof
+         *  2.instanceof ：检测某一个实例是否隶属于这个类 极其父类
+         *  3.construtor
+         *  4.Object.prototype.toString.call
+         */
+
+
+        function Fn(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        //构造函数执行
+        var f1 = new Fn('xxx',20);
+
+        console.log(f1 instanceof Fn); //true
+        console.log(f1 instanceof Object);//true
+        console.log(f1 instanceof Array);//false
+    </script>
+</body>
+</html>

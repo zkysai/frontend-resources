@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box{
+            width: 1202px;
+            height: 788px;
+            margin:0 auto;
+            background-image: url(./imgs/01.png);
+        }
+
+        .box::before,
+        .box::after{
+            float:left;
+            content:'';
+            width:50%;
+            height: 788px;
+            background-image: url(./imgs/02.png);
+        }
+
+        .box::after{
+            background-image: url(./imgs/02.png);
+            background-position: 601px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    </div>
+</body>
+</html>

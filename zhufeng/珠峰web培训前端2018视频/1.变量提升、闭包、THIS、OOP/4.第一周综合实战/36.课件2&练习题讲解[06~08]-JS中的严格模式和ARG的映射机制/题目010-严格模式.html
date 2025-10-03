@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        'use strict'; //开启严格模式，只对当前.js文件中的代码生效 ，下一个js文件需要开启严格模式，第一行代码需要再次编写。 快捷键：us[TAB]
+
+        ~function (){
+            'use strict';  //一般这么使用
+
+        }();
+
+      /**
+       * =>JS严格模式
+       * =>在当前作用域的 "第一行" 添加 "use strict" 即可，这样在当前作用域中就开启了JS的严格模式
+       */
+
+      function fn() {
+          'use strict'; //-> 只在当前作用域中使用严格模式
+          //console.log(arguments.callee); //报错，严格模式下禁止使用arguments.callee
+          /**
+           * Uncaught TypeError: 'caller', 'callee', and 'arguments' properties
+           * may not be accessed
+           * on strict mode functions or the arguments objects for calls to them
+           */
+
+      }
+
+      fn();
+    </script>
+</body>
+</html>

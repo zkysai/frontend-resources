@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+  <script>
+  function f() {}
+  var f;
+  console.log(f); //f() {}
+
+  //上述代码：预解析过程
+  /*
+      var f = undefined;        //第一步：预解析
+      function f() {}           //第二步：预解析
+      代码执行：
+      console.log(f);           //第三步：打印结果-->function f() {}
+
+
+      按理说，这里应该是undefined，结果不是
+      f =  function () {}
+      f =  undefined;
+
+      原因：f变量有值了，所有后面的 var f; 没有赋值，所以，不会覆盖前面的 f = function(){}
+  */
+  </script>
+</body>
+</html>

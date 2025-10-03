@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      function fn(x,y){
+          /**
+           *
+           * 形参
+           *    x=10
+           *    y=undefined
+           * 注意：只传递了一个值。此时Arguments的结构：
+           * Arguments
+           *  {
+           *    '0':10,
+           *    callee: ƒ
+           *  }
+           */
+          //console.log(arguments); //Arguments[10, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+          var arg = arguments;
+          arg[0] = 100;
+          console.log(x);       //100
+          y = 200;
+          console.log(y);       //200
+          console.log(arg[1]);  //undefined
+          //console.log(arguments); //Arguments[100, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+      }
+      fn(10);
+    </script>
+</body>
+</html>

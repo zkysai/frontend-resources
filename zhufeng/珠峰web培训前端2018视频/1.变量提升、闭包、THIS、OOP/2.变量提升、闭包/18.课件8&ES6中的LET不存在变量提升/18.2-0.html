@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /*
+      在ES6中基于LET/CONST等方式创建变量或者函数，不存在变量提升机制。
+     */
+
+    //注意：全局作用域下，let声明的变量和函数，没有变量提升了。
+
+    console.log(a);  //Uncaught ReferenceError: Cannot access 'a' before initialization
+    let a = 10;
+  </script>
+
+<pre>
+  哪里出错了？
+    在初始化之前访问了词法变量。
+    当在任何作用域（全局、模块、函数或块）中在声明变量的位置执行之前访问使用 let 或 const 声明的变量时，就会发生这种情况。
+
+      请注意，重要的是访问和变量声明的执行顺序，而不是代码中语句出现的顺序。有关更多信息，请参阅 时间性死区 的描述。
+
+      使用 var 声明的变量不会发生此问题，因为当它们被 提升 时，它们会初始化为 undefined 的默认值。
+      此错误也可能发生在 循环导入 中，当一个模块使用依赖于该模块自身进行评估的变量时。
+</pre>
+</body>
+</html>

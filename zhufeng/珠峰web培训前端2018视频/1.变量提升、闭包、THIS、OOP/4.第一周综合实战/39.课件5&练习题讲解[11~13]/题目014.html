@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title></title>
+</head>
+<body>
+    <script>
+        function fn(i) {
+            return function(n) {
+                console.log(n + (i++));
+            }
+        }
+
+        var f = fn(10);
+        f(20);
+        fn(20) (40);
+        fn(30)(50);
+        f(30);
+    </script>
+</body>
+</html>

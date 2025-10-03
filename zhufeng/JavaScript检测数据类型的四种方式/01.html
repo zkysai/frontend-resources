@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        /*
+            使用constructor来判断数据类型，不同于instanceof,
+            通过该方式既可以处理引用数据、又能够处理基本数据
+         */
+        function Car() {}
+
+        const aito = new Car();
+
+
+        console.log("aaa".constructor === String); //true
+        console.log([].constructor === Array); //true
+        console.log((1).constructor === Number); //true
+        console.log(true.constructor === Boolean); //true
+
+        console.log(aito.constructor === Car); //true
+
+
+        /**
+         * 注意:
+         * 1.null 和 undefined 没有 constructor, 所以它是无法检测 Null undefined
+         *   关于原型、原型链更多知识可查阅 《原型、原型链》
+         *
+         * 2.判断数字时使用(),比如  (123).constructor,如果写成123.constructor会报错
+         *
+         * 3.constructor在类继承时会出错,因为Object被覆盖掉了,检测结果就不对了
+         */
+    </script>
+</body>
+</html>

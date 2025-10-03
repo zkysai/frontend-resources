@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function b() {
+            a = 10;
+            return;
+
+            function a() { //这一步是关键 相当于 var a; 然后执行时 a=10修改的是局部变量a的值，全局变量没变
+                console.log(a);
+            }
+        }
+        var a;
+        a = 1;
+        b();
+        console.log(a);  //1
+    </script>
+</body>
+</html>

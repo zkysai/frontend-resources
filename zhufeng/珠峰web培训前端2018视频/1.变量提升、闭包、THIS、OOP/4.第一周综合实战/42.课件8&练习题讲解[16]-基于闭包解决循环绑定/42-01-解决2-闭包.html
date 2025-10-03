@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+<!--#btn-box>input[type=button,value=button_$]*5-->
+<div id="btn-box">
+    <input type="button" value="button_1">
+    <input type="button" value="button_2">
+    <input type="button" value="button_3">
+    <input type="button" value="button_4">
+    <input type="button" value="button_5">
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let _btnBox = document.querySelector('#btn-box');
+        let _inputs = document.querySelectorAll('#btn-box > input');
+
+        for (var i = 0, len = _inputs.length; i < len; i++) {
+            _inputs[i].addEventListener('click', (function (i) {
+                return function (){
+                    alert(i);
+                }
+            })(i));
+        }
+
+    });
+</script>
+</body>
+</html>

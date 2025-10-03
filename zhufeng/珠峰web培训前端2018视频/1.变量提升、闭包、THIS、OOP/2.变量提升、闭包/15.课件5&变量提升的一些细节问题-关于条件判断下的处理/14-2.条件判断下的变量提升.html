@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>条件判断下的变量提升</title>
+</head>
+<body>
+    <script>
+        /*
+        在当前作用域下，不论条件是否成立都要进行变量提升
+
+        =>带VAR的只是声明一个变量，赋值undefined
+        =>带FUNCTION的在老版本浏览器渲染机制下，左边声明一个变量，右边生成一个函数对象，并赋值，
+           但是为了迎合ES6中的块级作用域，新版浏览器对于函数（在条件判断中的函数），不管条件
+            是否成立，都只是先声明变量，但是赋值是undefined 类似于VAR
+         */
+       console.log(sum); //undefined
+       if (1===2){
+           function sum(){
+
+           }
+       }
+       console.log(sum);//undefined
+    </script>
+</body>
+</html>

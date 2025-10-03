@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      font-size: 14px;
+    }
+
+    #box3{
+      width:200px;
+      height: 200px;
+      padding:30px;
+      margin: 100px;
+      border: 10px solid green;
+    }
+  </style>
+</head>
+<body>
+  <div id="box3">
+    //1、offset系列
+    //->offsetWidth/offsetHeight：内容的宽度/高度+左右/上下填充+左右边框/上下边框
+    offsetWidth  <=>   clientWidth+左右边框
+    offsetHeight <=>   clientHeight+上下边框
+
+    offsetWidth/offsetHeight 和 内容是否溢出也没有关系。
+    offsetParent：_box3的offsetParnet是body => 当前元素的父级参照物（不是父级元素）
+    offsetLeft/offsetTop：当前元素的外边框距离父级参照物内边框的偏移量
+  </div>
+  <script>
+    let _box3 = document.querySelector('#box3');
+
+    console.log(_box3.clientLeft,_box3.clientTop); // 10,10
+    /**
+     * //1、offset系列
+     * //->offsetWidth/offsetHeight：内容的宽度/高度+左右/上下填充+左右边框/上下边框
+     *                       offsetWidth  <=>   clientWidth+左右边框
+     *                       offsetHeight <=>   clientHeight+上下边框
+     *
+     *   offsetWidth/offsetHeight 和 内容是否溢出也没有关系。
+     *   offsetParent：_box3的offsetParnet是body => 当前元素的父级参照物（不是父级元素）
+     *   offsetLeft/offsetTop：当前元素的外边框距离父级参照物内边框的偏移量
+     */
+  </script>
+</body>
+</html>

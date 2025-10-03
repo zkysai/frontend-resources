@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /**
+         * 个人认为是变量声明更加优先，其次是函数声明
+         *
+         * 变量提升：
+         *      => 作用域形成，JS代码自上而下执行之前，浏览器首先会把所
+         * 有带 "VAR" / "FUNCTION"关键词的进行提前 “声明 并 赋值”，这种预先处理机制称之为"变量提升"
+         *
+         * 带 VAR 的 赋值 undefined
+         * 带 FUNCTION 的 赋值 的是函数对象本身。
+         */
+        console.log(a);
+        var a = 12; //undefined
+    </script>
+</body>
+</html>

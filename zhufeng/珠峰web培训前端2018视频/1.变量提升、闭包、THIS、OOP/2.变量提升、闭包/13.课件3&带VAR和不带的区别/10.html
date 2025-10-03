@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+            =>在全局作用域下通过var声明一个变量，
+            也相当于给WINDOW全局对象设置了一个属性，
+            变量的值就是window对象的属性值
+        */
+        console.log(a) ;       //=>undefined
+        console.log(window.a); //=>undefined
+        //in:检测某个属性是否隶属于这个对象
+        console.log('a' in window); //=>true 在变量提升阶段，在全局作用域中声明了一个变量a，此时就把a当作属性赋值给window对象了，此时变量a的值是默认值undefined
+
+        var a = 12;
+        console.log(a) ;       //=>全局变量A12
+        console.log(window.a) ;//=>WINDOW的一个属性名A12
+    </script>
+</body>
+</html>

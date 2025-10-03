@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /**
+         * 严格模式 和 非严格模式下的区别：
+         *
+         * 4.在严格模式下不允许给一个对象设置重复属性名的："obj={n：10，n：20}
+         */
+
+        //非严格模式
+        ~function(){
+            function fn(){
+                console.log(this); //window
+            }
+
+            fn();
+        }();
+
+        //严格模式
+        ~function(){
+            'use strict'; //开启严格模式
+
+            function fn(){
+                console.log(this); //undefined
+            }
+
+            fn();
+        }();
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /**
+         *   =>
+         *      在相同的作用域中，基于LET不能声明相同名字的变量（不管用什么方式在
+         *   当前作用域下声明的变量，再次使用LET创建都会报错）
+         *      虽然没有变量提升机制，但是在当前作用域代码自上而下执行之前，浏览器会
+         *   做一个重复性检测厂(语法检测):自上而下查找当前作用域下所有变量，一旦发现
+         *   有重复的，直接抛出异常，代码也不会在执行了（虽然没有把变量提前声明定义，
+         *   但是浏览器已经记住了，当前作用域下有哪些变量)
+         */
+        // let a = 12;
+        // console.log(a);
+        // let a = 13; //=>Uncaught SyntaxError: Identifier 'a' has already been declared
+        // console.log(a);
+
+        /*
+        let a = 12;
+        console.log(a);
+        var a = 13; //=>Uncaught SyntaxError: Identifier 'a' has already been declared
+        console.log(a);
+        */
+
+        /**
+         * 词法变量在初始化之前被访问。该错误可以发生于任何语句块中，
+         * 当使用 let 或 const 修饰的变量在初始化之前被访问的时候。
+         */
+        a = 12;  //Uncaught ReferenceError: Cannot access 'a' before initialization
+        console.log(a);
+        let a = 13;
+        console.log(a);
+    </script>
+</body>
+</html>

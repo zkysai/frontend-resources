@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>学成在线</title>
+
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="fonts/iconfont.css">
+</head>
+<body>
+  <!--
+  通栏：浏览器有多宽，它就有多宽，宽度与浏览器窗口相同的盒子
+    标签结构：通栏 > 版心 > logo + 导航 + 搜索 + 用户
+                    flex
+    给每个盒子起个名字
+  -->
+  <!--header 开始-->
+  <div class="header">
+    <!--版心盒子-->
+    <div class="wrapper">
+      <!--logo优化 h1 > a > 文字-->
+      <div class="logo">
+        <!--h1的权重很高，一个页面只写一个-->
+        <h1>
+          <!--a标签的title：鼠标划上去显示文字-->
+          <a href="javascript:;" title="学成在线">学成在线</a>
+        </h1>
+      </div>
+      <!--导航
+        一般导航的做法，先写一个div ，嵌套ul>li>a
+      -->
+      <!--nav 导航 开始-->
+      <div class="nav">
+        <ul>
+          <li><a href="javascript:;" class="active">首页</a></li>
+          <li><a href="javascript:;">课程</a></li>
+          <li><a href="javascript:;">职业规划</a></li>
+        </ul>
+      </div>
+      <!--nav 导航 结束-->
+      <!--搜索 开始-->
+      <div class="search">
+        <!--H5 新增一个type="search" 搜索框 ，语义化更好仅此而已-->
+        <input type="search" autocomplete="off" placeholder="输入关键词">
+        <span></span>
+      </div>
+      <!--搜索 结束-->
+
+      <!--用户 开始-->
+      <div class="user">
+        <a href="javascript:;">
+          <img src="./imgs/user.png" alt="">
+          <span>播仔学前端</span>
+        </a>
+      </div>
+      <!--用户 结束-->
+    </div>
+  </div>
+  <!--header 结束-->
+
+  <!--banner也是要给通栏盒子-->
+  <!--banner 开始-->
+  <div class="banner">
+    <div class="wrapper">
+      <div class="left">
+        <ul class="sidebar">
+          <li><a href="javascript:;" class="active">前端开发</a></li>
+          <li><a href="javascript:;">后端开发</a></li>
+          <li><a href="javascript:;">移动开发</a></li>
+          <li><a href="javascript:;">人工智能</a></li>
+          <li><a href="javascript:;">商业预测</a></li>
+          <li><a href="javascript:;">云计算&大数据</a></li>
+          <li><a href="javascript:;">运维&测试</a></li>
+          <li><a href="javascript:;">UI设计</a></li>
+          <li><a href="javascript:;">产品"</a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <h3>我的课程表</h3>
+        <!--内容-->
+        <div class="content">
+          <dl>
+            <dt>数据可视化课程</dt>
+            <dd>正在学习<span>-echarts使用步骤</span></dd>
+          </dl>
+          <dl>
+            <dt>Vue3医疗项目课程</dt>
+            <dd>正在学习<span>-认识组合式API</span></dd>
+          </dl>
+          <dl>
+            <dt>React核心技术课程</dt>
+            <dd>正在学习<span>-rudex配合TS使用</span></dd>
+          </dl>
+          <a href="javascript:;">全部课程</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--banner 结束-->
+
+  <!--recommend 开始-->
+
+  <!--recommend 结束-->
+</body>
+</html>

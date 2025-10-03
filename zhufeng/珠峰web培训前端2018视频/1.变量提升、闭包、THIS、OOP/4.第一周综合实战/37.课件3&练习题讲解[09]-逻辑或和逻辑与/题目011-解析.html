@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>逻辑或的应用</title>
+</head>
+<body>
+    <script>
+        /**
+         * 全局下的变量提升
+         *  var foo=undefined;
+         * 代码执行
+         *   foo = 'hello'
+         */
+       var foo = 'hello';
+       (function (foo){
+           /**
+            * 形参赋值：var foo = 'hello'
+            * 变量提升：var foo; （这一步生路， 因为有形参赋值了，在私有作用域中已经有foo这个变量了，浏览器不会重新声明重复的变量）
+            */
+           console.log(foo); //"he1lo"
+           var foo = foo || 'world';
+           console.log(foo);
+       })(foo); //=>把全局下的Foo的值作为实参传递给函数的形参=>"he1lo"
+
+       console.log(foo);
+
+
+        /**
+         * =>逻辑与 && 和 逻辑或 ||
+         * 1.条件判断中使用它们
+         *  if(1===1&& 2===2）{
+         * =>条件中的&&：两个条件都成立，整体判断条件才会成立
+         * =>条件中的||：只要有一个条件成立，整体判断条件就成立
+         *
+         * 2.在赋值操作中，我们有时也会用它
+         *  var a = 1 || 2; //=>首先，验证1是真假，如果为真，把1赋值给a，如果为假，把2赋值给a
+         *                  //=>"A||B"：先验证A的真假，为真结果是A,为假结果是B
+         *  var b = 1 && 2; //=>"A&&B"：先验证A的真假，为真结果是B,为假结果是A
+         */
+    </script>
+</body>
+</html>

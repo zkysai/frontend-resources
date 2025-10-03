@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 1200px;
+            height: 600px;
+            background-color:pink;
+            line-height: 600px; /*图片垂直居中要加 line-height*/
+            text-align: center;
+        }
+
+        .box img{
+            /*
+                margin: 0 auto;
+                不能让图片水平居中，浏览器处理行内 和 行内块元素
+                就相当于处理文字，所以要使用text-align
+            */
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../imgs/bg.png">
+    </div>
+</body>
+</html>

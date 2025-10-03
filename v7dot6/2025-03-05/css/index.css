@@ -1,0 +1,106 @@
+/*初始化开始*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;/*内减模式*/
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+input{
+  border-radius: 0;
+  border:1px solid black;
+  outline: none;
+}
+
+body{
+  background-color: #f3f5f7;
+}
+
+.clearfix::before,
+.clearfix::after{
+  content: '';
+  display: table;
+}
+
+.claerfix::after{
+  clear: both;
+}
+
+.fl{
+  float: left;
+}
+
+.fr{
+  float: right;
+}
+
+/*初始化结束*/
+
+/*版心*/
+.wrapper{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header{
+  height: 42px;
+  background-color: pink;
+ /* margin-top: 30px;
+  margin-bottom: 30px;*/
+  margin: 30px auto;
+}
+
+.header h1{
+  float:left;
+}
+
+/*导航*/
+.nav{
+  float: left;
+  margin-left:70px;
+}
+
+.nav li{
+  float:left;
+  margin-right:24px;
+}
+
+.nav li:last-child{
+  margin-right: 0;
+}
+
+.nav li a{
+  float:left;
+  height: 42px;
+  padding:11px 9px;
+  color: #050505;
+  font-family: MicrosoftYaHei;
+  font-size: 18px;
+}
+
+.nav li a:hover{
+  border-bottom: 2px solid #00a4ff;
+}
+
+/*搜索*/
+.search{
+  float:left;
+  margin-left: 86px;
+  font-size: 0;
+}
+
+.search input{
+  text-indent: 19px;
+  border:1px solid #00a4ff;
+}
+
+
+
+
