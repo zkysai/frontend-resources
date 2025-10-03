@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+
+    let n = 0;
+    setTimeout(()=>{
+      console.log(++n);  //=>2) 不输出，一直循环
+    },3000);
+
+    console.log("n=",n); //=>1) n=0
+    while(1===1){
+    }
+    /*
+    * 先输出n=>0 ，然后一直循环不输出
+    *
+    * 解释器，没有等待3秒钟，而是继续向下执行代码，但是碰到了死循环。
+    * 为什么不输出，因为js是"单线程"的。
+    * */
+
+    /**
+     * [JS中的异步编程]
+     * 1.所有的事件绑定都是异步编程xxx.onclick=function(){}
+     * 2.所有的定时器都是异步编程setTimeout（function（）{},1ooo)
+     * 3.AJAX中一般都使用异步编程处理
+     * 4.回调函数也算是异步编程
+     */
+  </script>
+</body>
+</html>
