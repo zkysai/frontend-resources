@@ -260,7 +260,7 @@
 .recommend .wrapper{
   display: flex;
   height: 60px;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding:17px 20px 18px 18px;
   background-color: #fff;
@@ -277,6 +277,7 @@
 
 .recommend ul{
   display: flex;
+  flex: 1;
   align-items: center;
   height: 25px;
   margin-left: 20px;
@@ -287,6 +288,10 @@
   border-right: 1px solid #e0e0e0;
   font-size: 18px;
   color: #333;
+}
+
+.recommend ul a:hover{
+  color:#00a4ff;
 }
 
 .recommend ul li:first-child a{
@@ -300,7 +305,30 @@
 .recommend .modify{
   font-size: 16px;
   color: #00a4ff;
-  margin-left: 73px;
+  --margin-left: 73px;
 }
 /*<======recommend 精品推荐结束======>*/
+
+/*<======course课程模块开始======>*/
+.course{
+  margin-top: 31px;
+}
+
+.course .hd{
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.course .hd h3{
+  font-size: 21px;
+  color: #333;
+}
+.course .hd a{
+  height: 20px;
+  font-size: 14px;
+  color: #999;
+}
+/*<======course课程模块结束======>*/
 
