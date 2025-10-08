@@ -319,16 +319,84 @@
   height: 30px;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 .course .hd h3{
   font-size: 21px;
   color: #333;
 }
-.course .hd a{
+
+/*
+.course .hd a
+*/
+.course .hd .all{
   height: 20px;
   font-size: 14px;
   color: #999;
 }
+
+.course .bd ul{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.course .bd ul li{
+  width:228px;
+  height: 271px;
+  background-color: #f9fafb;
+ /* margin-right: 15px;*/
+  margin-bottom:13.5px;
+  transition: 0.3s;
+}
+
+.course .bd li:hover{
+  box-shadow: 5px 5px 2px 0px
+  rgba(211, 211, 211, 0.5);
+}
+
+.course .bd ul>li>a{
+  display: block;
+  height: 100%;
+}
+
+/*.course .bd ul li:nth-child(5n+5){
+  margin-right: 0;
+}*/
+
+/*倒数后5个的表示方式*/
+.course .bd ul li:nth-last-child(-n+5){
+  margin-bottom: 0;
+}
+
+.course .bd img{
+  height: 156px;
+}
+
+.course .bd h4{
+  /*这里h4标签的高度给加了 16px,取消了margin-bottom
+  就是为了防止字太多,如果出现3行,则不会影响下面的高度
+  */
+  height: calc(37px + 16px);
+  margin:20px 20px 0 20px;
+  font-size: 14px;
+  color: #333;
+  /*h4为什么高度要设置这么高,因为里面的内容可能会换行*/
+}
+
+.course .bd p{
+  padding:0 20px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #999;
+}
+
+.course .bd p .high{
+  color: #fa6400;
+}
+
+
+
+
 /*<======course课程模块结束======>*/
 
