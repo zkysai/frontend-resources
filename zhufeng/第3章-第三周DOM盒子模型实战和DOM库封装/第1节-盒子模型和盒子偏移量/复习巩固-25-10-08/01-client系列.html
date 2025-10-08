@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    .box1{
+      width:100px;
+      height: 100px;
+      padding: 10px 20px 30px 40px;
+      border-top:10px solid black;
+      border-right:20px solid red;
+      border-bottom:30px solid green;
+      border-left:40px solid yellow;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1">
+    你好吗
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded',function(){
+      let box1 = document.querySelector(".box1");
+
+      console.log(box1.clientWidth);   //160px
+      console.log(box1.clientHeight);  //140px
+      console.log(box1.clientLeft);    // 40px
+      console.log(box1.clientTop);     //10px
+
+      //clientWidth = width(可见区域) + padding-left + padding-right
+      //clientHeight = height(可见区域) + padding-top + padding-bottom
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    .box1{
+      width:100px;
+      height: 100px;
+      padding: 10px 20px 30px 40px;
+      border-top:10px solid black;
+      border-right:20px solid red;
+      border-bottom:30px solid green;
+      border-left:40px solid yellow;
+      background-color: pink;
+
+      overflow: scroll;
+    }
+
+    .box1::-webkit-scrollbar{
+      width:8px;
+      height: 8px;
+      background-color:#F5F5F5;
+    }
+
+    .box1::-webkit-scrollbar-track {
+      -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);
+      border-radius:10px;
+      background-color:#F5F5F5;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1">
+    你好吗
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded',function(){
+      let box1 = document.querySelector(".box1");
+
+      console.log(box1.clientWidth);  //143px
+      console.log(box1.clientHeight); //123px
+      console.log(box1.clientLeft);   //40px
+      console.log(box1.clientTop);    //10px
+
+      //clientWidth = width(可见区域) + padding-left + padding-right - 17(滚动条宽度)
+      //clientHeight = height(可见区域) + padding-top + padding-bottom - 17(滚动条宽度)
+    });
+  </script>
+</body>
+</html>
