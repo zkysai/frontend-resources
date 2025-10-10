@@ -8,14 +8,14 @@
   <script>
     new Promise((resolve,reject)=>{
       //执行一个异步操作
-
       let xhr = new XMLHttpRequest();
-      xhr.open('get','./05_test.html',true);
+      xhr.open('GET','https://jsonplaceholder.typicode.com/posts/1',true);
       xhr.onreadystatechange = ()=>{
         console.log(xhr.status);
         console.log(xhr.readyState);
-        if (xhr.status === 400 && xhr.readyState === 4){
+        if (xhr.status === 200 && xhr.readyState === 4){
           let val =  xhr.responseText;
+          //console.log(val);
           resolve(val);
         }else{
           reject('失败了');
