@@ -32,11 +32,11 @@
      */
     new Promise((resolve,reject)=>{
       setTimeout(()=>{
-        resolve();
+        resolve(100);
       },3000)
-    }).then(()=>{
+    }).then((res)=>{
       //=>第一个传递的函数是 resolve（暂时这么理解）
-      console.log('ok');
+      console.log('ok',res);
     },()=>{
       //=>第二个传递的函数是reject（暂时这么理解）
       console.log('fatal');
