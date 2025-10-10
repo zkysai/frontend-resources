@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise如何管理异步操作</title>
+</head>
+<body>
+  <script>
+    /**
+     * Promise：它是ES6中新增加的类（new Promise），目的是为了管理JS中的异步编程，所以
+     * 我们也把它称为 “Promise模式”。
+     *
+     * 【注】Promise是用来管理异步的，但是Promise本身是同步的。
+     *
+     * Promise如何管理异步操作?
+     * 匿名函数还有两个参数 resolve ,reject
+     * => resolve ：当异步操作执行成功，我们执行resolve方法
+     * => reject ： 当异步操作执行失败，我们执行reject方法
+     *
+     * 1, 将一个异步操作放入一个匿名函数中，然后new Promise的时候，立即传入该函数。
+     * 2, new Promise的时候，立马执行该函数，然后开启一个异步任务。异步任务 放入等待队列。3秒钟后执行。
+     * 3, 执行 实例.then()，传入两个函数进去，第一个函数相当于传给resolve，第二个参数相当于传给reject
+     * 4, 然后在setTimeout中就可以规划，3秒钟后，执行这个定时器到底是成功还是失败，
+     *    4.1, 如果执行成功，就调用 resolve函数
+     *    4.2, 如果执行失败，就执行 reject函数
+     * 这么操作，在定时器到什么实现执行成功或失败之后做什么事，就没有必要写在定时器里面了，就实现了代码的分离。
+     *
+     * 这么写的好处就是 ：避免 JavaScript 回调地狱
+     *      回调地狱是指在回调函数中嵌套回调函数，导致代码层层嵌套，
+     *    难以维护和阅读的情况。它通常出现在处理异步任务时，例如多个 AJAX 请求需要按顺序执行。
+     * 这就是 Promise 来管理异步。
+     */
+    new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+        resolve();
+      },3000)
+    }).then(()=>{
+      //=>第一个传递的函数是 resolve（暂时这么理解）
+      console.log('ok');
+    },()=>{
+      //=>第二个传递的函数是reject（暂时这么理解）
+      console.log('fatal');
+    });
+
+  </script>
+</body>
+</html>

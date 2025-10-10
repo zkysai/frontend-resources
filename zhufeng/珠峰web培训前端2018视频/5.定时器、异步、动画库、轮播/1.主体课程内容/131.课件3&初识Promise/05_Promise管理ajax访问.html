@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise管理异步实操</title>
+</head>
+<body>
+  <script>
+    new Promise((resolve,reject)=>{
+      //执行一个异步操作
+
+      let xhr = new XMLHttpRequest();
+      xhr.open('get','./05_test.html',true);
+      xhr.onreadystatechange = ()=>{
+        console.log(xhr.status);
+        console.log(xhr.readyState);
+        if (xhr.status === 400 && xhr.readyState === 4){
+          let val =  xhr.responseText;
+          resolve(val);
+        }else{
+          reject('失败了');
+        }
+      }
+      xhr.send(null);
+    }).then((res)=>{
+      console.log(res);
+    },(res)=>{
+      console.log(res);
+    });
+  </script>
+</body>
+</html>

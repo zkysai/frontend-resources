@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /**
+     * Promise：它是ES6中新增加的类（new Promise），目的是为了管理JS中的异步编程，所以
+     * 我们也把它称为 “Promise模式”。
+     *
+     * 【注】Promise是用来管理异步的，但是Promise本身是同步的。
+     *
+     * new Pormise(function (){
+     *    //new Promise的时候，创建Promise的一个实例，此时就是pending状态，会立即执行当前函数中的异步操作
+     * }).then();
+     */
+    /**
+     * 一个 Promise 必然处于以下几种状态之一：
+     *
+     * 待定（pending）：初始状态，既没有被兑现，也没有被拒绝。
+     *              准备状态:初始化成功，开始执行异步的任务
+     *              new Promise的时候就是 pending状态
+     * 已兑现（fulfilled）：意味着操作成功完成。
+     *              成功状态
+     * 已拒绝（rejected）：意味着操作失败。
+     *              失败状态
+     *
+     * 状态有三个：但是只能出现两个：pending/fullfilled  pending/rejected
+     */
+    //用箭头函数也行，里面涉及不到this的值
+    new Promise(()=>{
+      //=>执行一个异步的任务(new Promise的时候，创建Promise的一个实例，会立即执行当前函数中的异步操作)
+      setTimeout(()=>{
+        console.log("执行了啊");
+      },3000)
+      console.log(1); //[步1] 先输出 =>1
+    }).then();
+
+    console.log(2);   //[步2] 后输处 =>2
+
+    //
+  </script>
+</body>
+</html>
