@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <button id="btnloop">点击循环</button>
+  <button id="btnclick">点击</button>
+  <script>
+
+    /**
+     * 当我点击 循环，此时一次输出。
+     *
+     * 这时候 按 btnclick是没有任何效果的。
+     *
+     * 所谓JS的异步编程效果，就是使用js的单线程机制，来模拟出一个多线程的效果
+     * 这就是所谓的js的异步编程。
+     */
+    window.addEventListener("DOMContentLoaded",function (){
+      let _btnclick = document.querySelector("#btnclick");
+      let _btnloop = document.querySelector("#btnloop");
+
+      _btnloop.addEventListener('click',function (){
+        while(true){
+          console.log("000000000000");
+        }
+      });
+
+      _btnclick.addEventListener('click',function (){
+        console.log("=================");
+      });
+    })
+  </script>
+</body>
+</html>

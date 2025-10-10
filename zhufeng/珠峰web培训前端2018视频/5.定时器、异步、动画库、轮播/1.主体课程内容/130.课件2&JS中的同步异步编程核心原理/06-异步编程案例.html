@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    let n = 0;
+    setTimeout(()=>{
+      console.log(++n);
+    },0);
+    //注意：这里等待虽然写的是0毫秒，但是每个浏览器定时器都有一个最低的默认的定时器的延迟时间google默认5-6毫秒
+    //定时器时间因子设置为零也不是立即执行，每个浏览器都有一个自己最小的等待和反应时, 所以写0还是异步
+    console.log(n);
+
+    /**
+     * 输出的结果是 0,1
+     */
+  </script>
+</body>
+</html>
