@@ -314,14 +314,15 @@
   margin-top: 31px;
 }
 
-.course .hd{
+.hd{
   display: flex;
   height: 30px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
 }
-.course .hd h3{
+
+.hd h3{
   font-size: 21px;
   color: #333;
 }
@@ -329,7 +330,7 @@
 /*
 .course .hd a
 */
-.course .hd .all{
+.hd .all{
   height: 20px;
   font-size: 14px;
   color: #999;
@@ -394,9 +395,228 @@
 .course .bd p .high{
   color: #fa6400;
 }
-
-
-
-
 /*<======course课程模块结束======>*/
+
+/*<======frontend,Python模块开始======>*/
+.common-course{
+  margin-top: 32px;
+}
+
+.sub-nav{
+  display: flex;
+  --background-color: pink;
+  height: 23px;
+}
+
+.sub-nav li{
+  margin-right: 60px;
+}
+
+.sub-nav li:last-child{
+  margin-right: 0;
+}
+
+.sub-nav a{
+  font-size: 16px;
+  color: #333;
+}
+
+.sub-nav a.active{
+  color: #00a4ff;
+}
+
+.sub-nav a:hover{
+  color: #00a4ff;
+}
+
+.common-course .bd{
+  display: flex;
+  justify-content: space-between;
+}
+
+.common-course .bd .left{
+  width: 228px;
+  height: 386px;
+  background-color: pink;
+}
+
+.common-course .bd .right{
+  /*flex: 1;*/
+  width: 957px;
+  /*background-color: purple;*/
+}
+
+.common-course .bd .right .top{
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.common-course .bd .bottom ul{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.common-course .bd .bottom ul li{
+  width:228px;
+  height: 271px;
+  background-color: #f9fafb;
+  /* margin-right: 15px;*/
+  transition: 0.3s;
+}
+
+.common-course .bd .bottom li:hover{
+  box-shadow: 5px 5px 2px 0px
+  rgba(211, 211, 211, 0.5);
+}
+
+.common-course .bd .bottom ul>li>a{
+  display: block;
+  height: 100%;
+}
+
+.common-course .bd .bottom img{
+  height: 156px;
+}
+
+.common-course .bd .bottom h4{
+  /*这里h4标签的高度给加了 16px,取消了margin-bottom
+  就是为了防止字太多,如果出现3行,则不会影响下面的高度
+  */
+  height: calc(37px + 16px);
+  margin:20px 20px 0 20px;
+  font-size: 14px;
+  color: #333;
+  /*h4为什么高度要设置这么高,因为里面的内容可能会换行*/
+}
+
+.common-course .bd .bottom p{
+  padding:0 20px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #999;
+}
+
+/*.common-course .bd .bottom p .high{
+  color: #fa6400;
+}*/
+/*<======frontend模块结束======>*/
+
+/*<======人工智能模块开始======>*/
+.common-course .bd ul.artificial-intelligence{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.common-course .bd ul.artificial-intelligence li{
+  width:228px;
+  height: 271px;
+  background-color: #f9fafb;
+  /* margin-right: 15px;*/
+  transition: 0.3s;
+}
+
+.common-course .bd ul.artificial-intelligence li:hover{
+  box-shadow: 5px 5px 2px 0px
+  rgba(211, 211, 211, 0.5);
+}
+
+.common-course .bd ul.artificial-intelligence>li>a{
+  display: block;
+  height: 100%;
+}
+
+.common-course .bd ul.artificial-intelligence img{
+  height: 156px;
+}
+
+.common-course .bd ul.artificial-intelligence h4{
+  /*这里h4标签的高度给加了 16px,取消了margin-bottom
+  就是为了防止字太多,如果出现3行,则不会影响下面的高度
+  */
+  height: calc(37px + 16px);
+  margin:20px 20px 0 20px;
+  font-size: 14px;
+  color: #333;
+  /*h4为什么高度要设置这么高,因为里面的内容可能会换行*/
+}
+
+.common-course .bd ul.artificial-intelligence p{
+  padding:0 20px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #999;
+}
+
+.common-course .bd p .high{
+  color: #fa6400;
+}
+/*<======人工智能模块结束======>*/
+
+/*<======J2EE模块开始======>*/
+.common-course .bd ul.j2ee{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.common-course .bd ul.j2ee li{
+  width:228px;
+  height: 271px;
+  background-color: #f9fafb;
+  /* margin-right: 15px;*/
+  transition: 0.3s;
+}
+
+.common-course .bd ul.j2ee li:hover{
+  box-shadow: 5px 5px 2px 0px
+  rgba(211, 211, 211, 0.5);
+}
+
+.common-course .bd ul.j2ee>li>a{
+  display: block;
+  height: 100%;
+}
+
+.common-course .bd ul.j2ee img{
+  height: 156px;
+}
+
+.common-course .bd ul.j2ee h4{
+  /*这里h4标签的高度给加了 16px,取消了margin-bottom
+  就是为了防止字太多,如果出现3行,则不会影响下面的高度
+  */
+  height: calc(37px + 16px);
+  margin:20px 20px 0 20px;
+  font-size: 14px;
+  color: #333;
+  /*h4为什么高度要设置这么高,因为里面的内容可能会换行*/
+}
+
+.common-course .bd ul.j2ee p{
+  padding:0 20px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #999;
+}
+
+
+.common-course:last-of-type{
+  padding-bottom: 60px;
+}
+
+/*
+注意:这里不能使用.common-course:last-child
+这句话的意思是 最后一个标签的样式必须是 .common-course 才使用该样式
+
+但是如果在webstorm下运行, 会在最底下产生一个script,所以不会生效,但是本地访问会生效,不在服务器中运行.
+
+另外,如果手动在后面随便加一个标签比如p,那么该样式同样不会生效
+*/
+/*.common-course:last-child{
+  padding-bottom: 360px;
+}*/
+/*<======J2EE模块结束======>*/
+
 
