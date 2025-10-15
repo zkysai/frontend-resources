@@ -30,13 +30,16 @@
     window.addEventListener('DOMContentLoaded',function(){
       let box1 = document.querySelector(".box1");
 
-      console.log(box1.clientWidth);   //160px
-      console.log(box1.clientHeight);  //140px
-      console.log(box1.clientLeft);    // 40px
-      console.log(box1.clientTop);     //10px
+      //注意:不带单位px,类型是number 不是string
+      console.log(typeof box.clientWidth); //number
 
-      //clientWidth = width(可见区域) + padding-left + padding-right
-      //clientHeight = height(可见区域) + padding-top + padding-bottom
+      console.log( box1.clientWidth);   //160
+      console.log(box1.clientHeight);  //140
+      console.log(box1.clientLeft);    //40
+      console.log(box1.clientTop);     //10
+
+      //clientWidth =  padding-left + width(可见区域)+ + padding-right
+      //clientHeight = padding-top + height(可见区域) + padding-bottom
     });
   </script>
 </body>
