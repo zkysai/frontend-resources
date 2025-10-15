@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-size: 14px;
+        }
+
+        #box1{
+            margin: 100px;
+            padding: 30px;
+            width: 200px;
+            height: 200px;
+            border: 10px solid green;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        margin: 100px;<br>
+        padding: 30px;<br>
+        width: 200px;<br>
+        height: 200px;<br>
+        border: 10px solid green;<br>
+        line-height: 30px;<br>
+    </div>
+
+    <script>
+        //1、元素.style.属性名
+        //->需要我们把元素的样式都写在行内样式上才可以（写在样式表中是不管用的）
+        //console.log(box.style.height);//->""
+        //console.log(box.style.width);//->"200px"
+        //->在真实项目中，这种方式不常用，因为我不能为了获取值而把所有的样式都写在行内（无法实现CSS和HTML的分离）
+        //2、使用window.getComputedStyle这个方法获取所有经过浏览器计算过的样式
+        //->所有经过浏览器计算过的样式：只要当前的元素标签可以在页面中呈现出来，那么它的所有的样式都是经过浏览器计算过的（渲染过的）->哪怕有些样式你没有写，我们也可以获取到
+
+        /**
+         * element
+         * 用于获取计算样式的Element。
+         *
+         * pseudoElt 可选
+         * 指定一个要匹配的伪元素的字符串。必须对普通元素省略（或null）。
+         *
+         * window.getComputedStyle(element)
+         * window.getComputedStyle(element, pseudoElt)
+         *
+         * window.getComputedStyle(当前操作的元素对象, 伪元素选择器)
+         */
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        h3::after {
+            content: "rocks!";
+        }
+    </style>
+</head>
+<body>
+    <h3>generated content </h3>
+
+    <script>
+        //第二个参数只对伪元素有用
+        let _h3 = document.querySelector("h3"),
+            result = getComputedStyle(_h3, "::after").content;
+        console.log(`the generated content is: ${result}`);
+    </script>
+</body>
+</html>
