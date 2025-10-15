@@ -32,13 +32,13 @@
     window.addEventListener('DOMContentLoaded',function(){
       let box1 = document.querySelector(".box1");
 
-      console.log(box1.clientWidth);  //143px
-      console.log(box1.clientHeight); //123px
-      console.log(box1.clientLeft);   //40px
-      console.log(box1.clientTop);    //10px
+      console.log(box1.clientWidth);  //143
+      console.log(box1.clientHeight); //123
+      console.log(box1.clientLeft);   //40
+      console.log(box1.clientTop);    //10
 
-      //clientWidth = width(可见区域) + padding-left + padding-right - 17(滚动条宽度)
-      //clientHeight = height(可见区域) + padding-top + padding-bottom - 17(滚动条宽度)
+      //clientWidth = padding-left + width(可见区域) + padding-right - 17(滚动条宽度)
+      //clientHeight = padding-top + height(可见区域) + padding-bottom - 17(滚动条宽度)
     });
   </script>
 </body>
