@@ -23,8 +23,8 @@
     }
 
     .box1::-webkit-scrollbar{
-      width:8px;
-      height: 8px;
+      width:8px; /*设置滚动条宽度*/
+      height: 8px; /*设置滚动条高度*/
       background-color:#F5F5F5;
     }
 
@@ -44,13 +44,13 @@
     window.addEventListener('DOMContentLoaded',function(){
       let box1 = document.querySelector(".box1");
 
-      console.log(box1.clientWidth);  //143px
-      console.log(box1.clientHeight); //123px
-      console.log(box1.clientLeft);   //40px
-      console.log(box1.clientTop);    //10px
+      console.log(box1.clientWidth);  //152
+      console.log(box1.clientHeight); //132
+      console.log(box1.clientLeft);   //40
+      console.log(box1.clientTop);    //10
 
-      //clientWidth = width(可见区域) + padding-left + padding-right - 17(滚动条宽度)
-      //clientHeight = height(可见区域) + padding-top + padding-bottom - 17(滚动条宽度)
+      //clientWidth =  padding-left + width(可见区域)  + padding-right - 8(滚动条宽度)
+      //clientHeight = padding-top + height(可见区域) + padding-bottom - 8(滚动条宽度)
     });
   </script>
 </body>
