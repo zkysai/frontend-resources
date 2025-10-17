@@ -620,3 +620,95 @@
 /*<======J2EE模块结束======>*/
 
 
+/*<======底部盒子 开始======>*/
+.footer{
+  padding-top: 60px;
+  margin-top: 60px;
+  height: 273px;
+  background-color: #fff;
+}
+
+.footer .wrapper{
+  display:flex;
+  justify-content: space-between;
+}
+
+/*
+.footer .left{
+  background-color: pink;
+}*/
+
+.footer .f-logo{
+  display: block;
+  width: 195px;
+  height: 41px;
+  background-image: url("../imgs/logo.png");
+}
+
+.footer p{
+  width: 432px;
+  height: 33px;
+  /*注意:多行文字就要涉及到行高了*/
+  line-height: 17px;
+  font-size: 12px;
+  color: #666;
+  margin-top: 24px;
+}
+
+.footer .app{
+  display: block;
+  width: 120px;
+  height: 36px;
+  border: solid 1px #00a4ff;
+  text-align: center;
+  line-height: 36px;
+  font-size: 16px;
+  color: #00a4ff;
+  margin-top: 14px;
+}
+
+.footer .app:hover{
+  color:#fff;
+  background-color: #00a4ff;
+}
+
+.footer .right{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer dl{
+  margin-left: 130px;
+}
+
+.footer dl:first-of-type{
+  margin-left: 0px;
+}
+
+.footer .right dt{
+  font-size: 16px;
+  line-height: 23px;
+  color: #333;
+  font-weight: normal;
+  height: 23px;
+  margin-bottom: 12px;
+}
+
+
+.footer .right dd{
+  height: 24px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 24px;
+
+}
+
+.footer .right dd a{
+  display: block;
+  color: #666;
+}
+
+.footer .right dd a:hover{
+  color: #00a4ff;
+}
+/*<======底部盒子 结束======>*/
