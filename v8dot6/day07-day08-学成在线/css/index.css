@@ -1,7 +1,19 @@
 /*<======header开始======>*/
+/*CSS全局变量的使用*/
+:root{
+  --height:100px;
+}
 .header{
-  height: 100px;
+  /*固定定位*/
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%; /*必须加宽度100%*/
+
+ /* height: 100px;*/
+  height: var(--height); /*CSS全局变量的使用*/
   background-color: #fff;
+  box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.2) ;
 }
 
 .logo{
@@ -116,6 +128,7 @@
 /*======banner开始======*/
 .banner{
   background-color: #0092cb;
+  margin-top: var(--height); /*CSS全局变量的使用*/
 }
 
 .banner .wrapper{
