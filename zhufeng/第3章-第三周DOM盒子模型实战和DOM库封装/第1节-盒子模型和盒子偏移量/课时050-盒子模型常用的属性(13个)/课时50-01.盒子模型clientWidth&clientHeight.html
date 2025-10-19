@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-size: 14px;
+        }
+
+        #box1{
+            margin: 100px;
+            padding: 30px;
+            width: 200px;
+            height: 200px;
+            border: 10px solid green;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        站在台风口上，猪都能飞起来~~；要得到你必须要付出，要付出你还需要
+        学会坚持，如果你真的觉得很难，那你就放弃，但是一但放弃就不要在抱怨
+    </div>
+
+    <script>
+        //1、JS盒子模型指的是通过JS中提供的一系列的属性和方法，获取页面中元素的样式信息值
+        let _box1 = document.querySelector('#box1');
+
+        console.log(_box1.clientWidth,_box1.clientHeight); // 260,260
+        //1,client系列
+        //-> clientWidth/clientHeight:盒子内容的宽度/高度(width) + 左右/上下 内边距(padding)
+
+    </script>
+</body>
+</html>
