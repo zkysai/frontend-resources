@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            border: 10px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        //第一次升级：把获取到的样式值"单位去掉"
+        function getCss(ele,attr){
+            let val = null;
+
+            if("getComputedStyle" in window){ //window.getComputedStyle
+                val = window.getComputedStyle(ele, null)[attr];
+                console.log('===========',val);
+            }
+            /*
+            else{
+                val = ele.currentStyle[attr];
+            }
+            */
+            //->只有符合"数字+单位/数字"才可以使用parseFloat
+            //->使用parseFloat去掉单位 或是 复合属性，是有问题的
+            return parseFloat(val); //-> 这样不行，对于某些样式属性的值
+        }
+        
+        let _box = document.querySelector("#box");
+
+        //使用parseFloat去掉单位 或是 复合属性，是有问题的
+        console.log(getCss(_box, 'width'));  //100 <-> 100px
+        console.log(getCss(_box, 'float'));  //NaN <-> none
+        console.log(getCss(_box, 'border')); //10  <-> 10px solid rgb(255, 0, 0)
+
+        //所以，float是不能去单位的，border也不能去，因为是复合属性。
+        //position,margin , padding ,float ,border,background,backgroundColor 这些复合属性都不能去
+    </script>
+</body>
+</html>
