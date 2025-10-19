@@ -725,3 +725,20 @@
   color: #00a4ff;
 }
 /*<======底部盒子 结束======>*/
+
+/*<======侧边栏 开始======>*/
+.fix-sidebar{
+  position: fixed;
+  /*固定定位垂直居中*/
+ /* bottom:50%;
+  transform: translateY(50%);*/
+
+  top:50%;
+  transform:translateY(-50%);
+  right: 0;
+  width:50px;
+  height: 300px;
+  background-color: pink;
+
+}
+/*<======侧边栏 结束======>*/
