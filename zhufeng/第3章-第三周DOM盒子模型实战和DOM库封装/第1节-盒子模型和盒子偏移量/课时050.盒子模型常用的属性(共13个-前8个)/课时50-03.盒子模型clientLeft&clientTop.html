@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>clientLeft , clientTop</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      font-size: 14px;
+    }
+
+    #box3{
+      width:200px;
+      height: 200px;
+      padding:30px;
+      margin: 100px;
+      border: 10px solid green;
+    }
+  </style>
+</head>
+<body>
+  <div id="box3">
+    内容的宽度和高度：我们设置的width/height这两个样式就是内容的宽和高；如果
+    没有设置height值，容器的高度会根据里面内容自已进行适应，这样获取的值就是真实内容
+    的高；如果设置固定的高度了，不管内容是多了还是少了，其实我们内容的高度指的都是设定
+    的那个值
+
+    内容的宽度和高度：我们设置的width/height这两个样式就是内容的宽和高；如果
+    没有设置height值，容器的高度会根据里面内容自已进行适应，这样获取的值就是真实内容
+    的高；如果设置固定的高度了，不管内容是多了还是少了，其实我们内容的高度指的都是设定
+    的那个值
+  </div>
+  <script>
+
+    let _box3 = document.querySelector('#box3');
+    //为什么要使用这些属性？？ 可以方便的获得距离，不用通过css属性。
+    console.log(_box3.clientLeft,_box3.clientTop); // 10,10
+    /**
+     * 2、client系列 clientLeft , clientTop
+     * -> clientLeft：左边框的宽度 borderLeft
+     * -> clientTop：上边框的高度  borderTop
+     *
+     *  属性contentEditable：可设置是否可编辑
+     */
+  </script>
+</body>
+</html>

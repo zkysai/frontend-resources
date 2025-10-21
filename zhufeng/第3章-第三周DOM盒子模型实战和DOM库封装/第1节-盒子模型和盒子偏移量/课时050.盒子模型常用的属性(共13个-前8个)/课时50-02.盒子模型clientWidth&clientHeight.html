@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>高度设为了auto</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-size: 14px;
+        }
+
+        #box1{
+            margin: 100px;
+            padding: 30px;
+            width: 200px;
+            height: auto; /*注意：高度自动*/
+            border: 10px solid green;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        内容的宽度和高度：我们设置的width/height这两个样式就是内容的宽和高；如果
+        没有设置height值，容器的高度会根据里面内容自已进行适应，这样获取的值就是真实内容
+        的高；如果设置固定的高度了，不管内容是多了还是少了，其实我们内容的高度指的都是设定
+        的那个值
+
+        内容的宽度和高度：我们设置的width/height这两个样式就是内容的宽和高；如果
+        没有设置height值，容器的高度会根据里面内容自已进行适应，这样获取的值就是真实内容
+        的高；如果设置固定的高度了，不管内容是多了还是少了，其实我们内容的高度指的都是设定
+        的那个值
+    </div>
+
+    <script>
+        //1、JS盒子模型指的是通过JS中提供的一系列的属性和方法，获取页面中元素的样式信息值
+        let _box1 = document.querySelector('#box1');
+
+        /**
+         * ->内容的宽度和高度：我们设置的width/height这两个样式就是内容的宽和高；如果
+         * 没有设置height值，容器的高度会根据里面内容自已进行适应，这样获取的值就是真实内容
+         * 的高；如果设置固定的高度了，不管内容是多了还是少了，其实我们内容的高度指的都是设定
+         * 的那个值;
+         *
+         * ->真实内容的宽度和高度：这个代指的是实际内容个的宽高（和我们设置的height没
+         * 有必然的联系），例如：我设置高度为200px，如果内容有溢出，那么真实内容的高度是要把溢
+         * 出内容的高度也要加进来的;
+         */
+        console.log(_box1.clientWidth,_box1.clientHeight); // 260 600
+        //1,client系列 clientWidth , clientHeight
+        //-> clientWidth:  左填充(padding-left) + 盒子内容的宽度(width) + 右填充(padding-right)
+        //-> clientHeight: 上填充(padding-top) + 盒子内容的高度(height) + 下填充(padding-bottom)
+
+    </script>
+</body>
+</html>
