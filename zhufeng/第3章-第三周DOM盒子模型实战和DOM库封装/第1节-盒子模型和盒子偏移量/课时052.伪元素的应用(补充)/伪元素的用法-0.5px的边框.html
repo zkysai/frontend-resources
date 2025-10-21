@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box{
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .box1{
+            border: 1px solid black;
+        }
+
+        .box5{
+            position: relative;
+        }
+
+        .box5:after{
+            display: block;
+            position: absolute;
+            content: 'sss';
+            left: 0;
+            top: 0;
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 200%;
+            height: 200%;
+            --transform: scale(0.5);
+            transform-origin: left bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        1px 边框作为对比
+    </div>
+
+    <div class="box box5">
+
+    </div>
+</body>
+</html>
