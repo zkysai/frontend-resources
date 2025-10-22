@@ -6,6 +6,7 @@
 .header{
   /*固定定位*/
   position: fixed;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%; /*必须加宽度100%*/
@@ -267,7 +268,12 @@
 
 /*<======recommend 精品推荐开始======>*/
 .recommend{
-  padding-left:3px;
+  position: sticky;
+  top: 100px;
+  z-index: 999;
+
+  --padding-left:3px;
+
   margin-top:10px;
 }
 .recommend .wrapper{
@@ -353,6 +359,10 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.course li{
+  position: relative;
 }
 
 .course .bd ul li{
