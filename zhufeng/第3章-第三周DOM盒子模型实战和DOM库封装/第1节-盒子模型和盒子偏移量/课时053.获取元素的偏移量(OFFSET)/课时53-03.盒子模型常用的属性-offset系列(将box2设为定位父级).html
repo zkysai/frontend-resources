@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>#box2 设置 position: relative</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    #box1{
+      position: relative;
+      padding: 40px;
+      width: 300px;
+      height: 300px;
+      border: 40px solid blue;
+      background-color: lightskyblue;
+      margin: 40px;
+    }
+
+    #box2{
+      position: relative;
+      width:200px;
+      height: 200px;
+      padding:20px;
+      border: 20px solid green;
+      background-color: lightgreen;
+    }
+
+    #box3{
+      margin: 10px;
+      width:100px;
+      height: 100px;
+      padding:10px;
+      border: 10px solid purple;
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body>
+  <div id="box1">
+    <div id="box2">
+      <div id="box3">
+        1、offset系列
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let _box3 = document.querySelector('#box3');
+
+    console.log(_box3.offsetWidth,_box3.offsetHeight); //140 140
+    console.log(_box3.offsetLeft,_box3.offsetTop); // 30 30
+
+    console.log(_box3.offsetParent); //得到的定位父级是 box2
+    /**
+     * //1、offset系列
+     * offsetWidth ： 左边框 + 左填充 + 内容的宽度(width) + 右填充 + 右边框
+     * offsetHeight： 上边框 + 上填充 + 内容的高度(height) +下填充 + 下边框
+     *                       offsetWidth  <=>   clientWidth+左右边框
+     *                       offsetHeight <=>   clientHeight+上下边框
+     * offsetWidth/offsetHeight 和 内容是否溢出也没有关系。
+     *
+     * offsetParent：_box3的offsetParnet是box1 => 当前元素的父级参照物（不是父级元素）
+     *        -> 如果没有定位父级，则其offsetParent就是body
+     *        -> 想要改变父级参照物(设置定位父级)需要通过position定位来进行改变
+     *            position: absolute;
+     *            position: relative;
+     *            position: fixed;
+     *
+     * offsetLeft/offsetTop：是用于获取元素相对于其最近的已定位父级参照物的距离
+     *              什么距离：当前元素的外边框 距离 父级参照物内边框的偏移量
+     * 注意事项:
+     *    定位祖先的影响：offsetLeft 和 offsetTop的计算依赖于最近的已定位祖先元素。
+     */
+  </script>
+</body>
+</html>

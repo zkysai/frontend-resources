@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>求任意元素距离body的左偏移量</title>
+
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    #box1{
+      position: relative;
+      padding: 40px;
+      width: 300px;
+      height: 300px;
+      border: 40px solid blue;
+      background-color: lightskyblue;
+      margin: 40px;
+    }
+
+    #box2{
+      position: relative;
+      width:200px;
+      height: 200px;
+      padding:20px;
+      border: 20px solid green;
+      background-color: lightgreen;
+    }
+
+    #box3{
+      margin: 10px;
+      width:100px;
+      height: 100px;
+      padding:10px;
+      border: 10px solid purple;
+      background-color: lightpink;
+    }
+  </style>
+  <script src="js/jquery.js"></script>
+</head>
+<body>
+  <div id="box1">
+    <div id="box2">
+      <div id="box3">
+        求任意元素距离body的左偏移量
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(function (){
+      let val = $("#box3").offset();
+
+      console.log(`top->${val.top},left->${val.left}`);//top->170,left->170
+
+      //->offset：等同于jQuery中的offset方法，实现获取页面中任意一个元素，距body的偏移（包含左偏移和上偏移），不管当前元素的父级参照物是谁
+      function offset(ele,left=0){
+        if (ele == null)
+          throw new Error('aaaaaaa');
+
+
+        let offsetLeft = ele.offsetLeft;
+        let clientLeft = ele.clientLeft;
+
+        let offsetParent = ele.offsetParent;
+
+        left += offsetLeft + clientLeft;
+        offset(offsetParent,left);
+
+
+        
+      }
+
+      let _box3 = document.querySelector("#box3");
+
+
+    })
+  </script>
+</body>
+</html>
