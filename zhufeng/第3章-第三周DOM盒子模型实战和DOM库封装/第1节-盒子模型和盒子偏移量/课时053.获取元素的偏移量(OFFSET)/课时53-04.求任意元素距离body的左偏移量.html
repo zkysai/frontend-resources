@@ -57,24 +57,33 @@
       console.log(`top->${val.top},left->${val.left}`);//top->170,left->170
 
       //->offset：等同于jQuery中的offset方法，实现获取页面中任意一个元素，距body的偏移（包含左偏移和上偏移），不管当前元素的父级参照物是谁
-      function offset(ele,left=0){
+      function offset(ele=null,left=0){
         if (ele == null)
           throw new Error('aaaaaaa');
 
+        let offsetParent = ele.offsetParent;
+
+        if(offsetParent === null)
+          return left;
 
         let offsetLeft = ele.offsetLeft;
         let clientLeft = ele.clientLeft;
+        //console.log(offsetLeft,clientLeft);
 
-        let offsetParent = ele.offsetParent;
+
+        console.log(offsetParent);
 
         left += offsetLeft + clientLeft;
+
+        console.log(left);
+
+
         offset(offsetParent,left);
-
-
-        
       }
 
       let _box3 = document.querySelector("#box3");
+
+      console.log(offset(_box3, 0));
 
 
     })
