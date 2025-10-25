@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      font-size: 14px;
+    }
+
+    div{
+      line-height: 25px;
+    }
+
+    #box1{
+      width:200px;
+      height: 200px;
+      padding:20px;
+      margin: 20px;
+      border: 20px solid green;
+      overflow: hidden; /*默认值 */
+    }
+
+    #box2{
+      width:200px;
+      height: 200px;
+      padding:20px;
+      margin: 20px;
+      border: 20px solid green;
+      overflow: scroll;
+    }
+  </style>
+</head>
+<body>
+  <div id="box1">
+    1、scroll系列: box1<br>
+    -> scrollWidth/scrolltHeight：<br>
+    -> 内容不溢出，没有设置  overflow: hidden;
+  </div>
+
+  <div id="box2">
+    2、scroll系列: box2
+    -> scrollWidth/scrolltHeight：
+    -> 内容不溢出, 设置overflow:scroll;
+  </div>
+
+  <script>
+    let _box1 = document.querySelector('#box1');
+    //内容不溢出, 设置overflow:hidden; -> 默认值
+    console.log(`_box1的scrollWidth 和 scrollHeight->${_box1.scrollWidth},${_box1.scrollHeight}`); //240 240
+    console.log(`_box1的clientWidth 和 clientHeight->${_box1.clientWidth},${_box1.clientHeight}`); //240 240
+
+    console.log("<===========================================>");
+
+    let _box2 = document.querySelector('#box2');
+    //内容不溢出, 设置overflow:scroll; 滚动条19px
+    console.log(`_box2的scrollWidth 和 scrollHeight->${_box2.scrollWidth},${_box2.scrollHeight}`); //221 221
+    console.log(`_box2的clientWidth 和 clientHeight->${_box2.clientWidth},${_box2.clientHeight}`); //221 221
+
+    /**
+     * 1、scroll系列
+     * -> scrollWidth/scrollHeight：
+     *
+     * scrollWidth 属性是一个只读属性.
+     *  它返回该元素的宽度（width），高度(height)包含内边距（padding），不包含外边距（margin）、边框（border），是一个整数，单位是像素 px。
+     *
+     * -> 如果容器中的内容没有溢出的情况下,且 overflow:hidden; 默认值。
+     *    则和clientWidth/clientHeight一模一样
+     *
+     * 同一个浏览器，内容如果不溢出，我们是否设置overflow='scroll'
+     * 对于最终的结果也是有影响的。不同的浏览器种我们获取的结果也不同,因为chrome 和  edge的默认滚动条宽度不同。
+     *
+     * -> 如果容器中的内容有溢出，我们获取的结果是如下规则：
+     *    scrollWidth： 真实内容的高度（包含溢出）+ 左填充(padding-left)
+     *    scrollHeight：真实内容的高度（包含溢出）+ 上填充(padding-top)
+     *
+     * -> scrollLeft/scrollTop：滚动条卷去的高度和宽度。
+     *    滚动条在拉动的过程中，有一部分看不到了，看不到的那一部分就是卷去的高度和宽度
+     */
+
+  </script>
+</body>
+</html>
