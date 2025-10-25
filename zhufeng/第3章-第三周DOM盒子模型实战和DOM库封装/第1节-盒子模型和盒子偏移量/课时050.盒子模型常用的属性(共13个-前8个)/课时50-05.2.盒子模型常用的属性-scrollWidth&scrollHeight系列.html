@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>内容溢出，设置  overflow: hidden</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      font-size: 14px;
+    }
+
+    div{
+      line-height: 25px;
+    }
+
+    #box3{
+      width:200px;
+      height: 200px;
+      padding:20px;
+      margin: 100px;
+      border: 20px solid green;
+      overflow: hidden; /*默认值 */
+    }
+
+    #box4{
+      width:200px;
+      height: 200px;
+      padding:20px;
+      margin: 100px;
+      border: 20px solid green;
+      overflow: hidden; /*默认值 */
+
+      padding-top:40px;
+      padding-bottom: 40px;
+    }
+
+
+    #box5{
+      width:200px;
+      height: 200px;
+      padding:20px;
+      margin: 100px;
+      border: 20px solid green;
+      overflow-y: scroll;
+
+      --padding-top:40px;
+      --padding-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div id="box3">
+    -> 内容没有溢出，正好8行0001
+    -> 内容没有溢出，正好8行0002
+    -> 内容没有溢出，正好8行0003
+    -> 内容没有溢出，正好8行0004
+    -> 内容没有溢出，正好8行0005
+    -> 内容没有溢出，正好8行0006
+    -> 内容没有溢出，正好8行0007
+    -> 内容没有溢出，正好8行0008
+  </div>
+
+  <div id="box4">
+    -> 内容没有溢出，正好8行0001
+    -> 内容没有溢出，正好8行0002
+    -> 内容没有溢出，正好8行0003
+    -> 内容没有溢出，正好8行0004
+    -> 内容没有溢出，正好8行0005
+    -> 内容没有溢出，正好8行0006
+    -> 内容没有溢出，正好8行0007
+    -> 内容没有溢出，正好8行0008
+    -> 内容没有溢出，正好8行0009
+    -> 内容没有溢出，正好8行0010
+    -> 内容没有溢出，正好8行0011
+    -> 内容没有溢出，正好8行0012
+    -> 内容没有溢出，正好8行0013
+    -> 内容没有溢出，正好8行0014
+    -> 内容没有溢出，正好8行0015
+    -> 内容没有溢出，正好8行0016
+  </div>
+
+  <div id="box5">
+    -> 内容有溢出，16行000001
+    -> 内容有溢出，16行000002
+    -> 内容有溢出，16行000003
+    -> 内容有溢出，16行000004
+    -> 内容有溢出，16行000005
+    -> 内容有溢出，16行000006
+    -> 内容有溢出，16行000007
+    -> 内容有溢出，16行000008
+    -> 内容有溢出，16行000009
+    -> 内容有溢出，16行000010
+    -> 内容有溢出，16行000011
+    -> 内容有溢出，16行000012
+    -> 内容有溢出，16行000013
+    -> 内容有溢出，16行000014
+    -> 内容有溢出，16行000015
+    -> 内容有溢出，16行000016
+  </div>
+  <script>
+    let _box3 = document.querySelector('#box3');
+    //内容没有溢出, height:200px;line-height:25px 正好8行,设置overflow:hidden;
+    console.log(`_box3的scrollWidth 和 scrollHeight->${_box3.scrollWidth},${_box3.scrollHeight}`); //240 240
+
+
+    let _box4 = document.querySelector('#box4');
+    //内容溢出, 设置overflow:hidden; height:200px;line-height:25px 正好16行
+    console.log(`_box4的scrollWidth 和 scrollHeight->${_box4.scrollWidth},${_box4.scrollHeight}`); //240,480(padding-top:40px+ height:200+height:200 + padding-bottom:40px)
+
+
+    let _box5 = document.querySelector('#box5');
+    //y轴的内容溢出, 设置overflow-y: scroll; ; height:200px;line-height:25px 正好16行
+    //221,  padding-left 20px +width: 181px + padding-right 20px
+    //440(padding-top:40px+ height:200+height:200 )
+    console.log(`_box5的scrollWidth 和 scrollHeight->${_box5.scrollWidth},${_box5.scrollHeight}`); //221,440
+
+    /**
+     * 1、scroll系列
+     * -> scrollWidth/scrollHeight：
+     *
+     * scrollWidth 属性是一个只读属性，它返回该元素的像素宽度，高度包含内边距（padding），
+     * 不包含外边距（margin）、边框（border），是一个整数，单位是像素 px。
+     *
+     * scrollHeight 的值等于该元素在不使用滚动条的情况下为了适应视口中所用内容所需的最小高度。
+     * 高度的度量方式与 clientHeight 相同：
+     *
+     * -> 包括元素的内边距，但不包括元素的边框、外边距以及水平滚动条（如果存在）。
+     *    它也包括 ::before 和 ::after 这样的伪元素的高度。
+     *    如果元素的内容不需要垂直滚动条就可以容纳，则其 scrollHeight 等于 clientHeight。
+     *
+     * -> 如果容器中的内容没有溢出的情况下,且 overflow:hidden; 默认值。
+     *    则和clientWidth/clientHeight一模一样
+     *
+     * -> 如果容器中的内容有溢出，设置了overflow:hidden; 我们获取的结果是如下规则：
+     *    scrollWidth： 左填充(padding-left) + 真实内容的高度（包含溢出）+右填充(padding-left)
+     *    scrollHeight：上填充(padding-top) + 真实内容的高度（包含溢出）+下填充(padding-top)
+     *
+     * -> 如果容器中的内容有溢出，设置了overflow:scroll; 我们获取的结果是如下规则：
+     *    scrollWidth： 真实内容的高度（包含溢出）+ 左填充(padding-left)
+     *    scrollHeight：真实内容的高度（包含溢出）+ 上填充(padding-top)
+     *
+     * -> scrollLeft/scrollTop：滚动条卷去的高度和宽度。
+     *    滚动条在拉动的过程中，有一部分看不到了，看不到的那一部分就是卷去的高度和宽度
+     *
+     * 同一个浏览器，我们是否设置overflow='hidden'对于最终的结果是有影响的。
+     *    不同的浏览器种我们获取的结果也可能不同。
+     *
+     */
+  </script>
+</body>
+</html>

@@ -66,27 +66,32 @@
      * 1、scroll系列
      * -> scrollWidth/scrollHeight：
      *
-     * scrollWidth 属性是一个只读属性.
-     *  它返回该元素的宽度（width），高度(height)包含内边距（padding），不包含外边距（margin）、边框（border），是一个整数，单位是像素 px。
+     * scrollWidth 属性是一个只读属性.它返回该元素的宽度（width），
+     *  高度(height)包含内边距（padding），不包含外边距（margin）、边框（border），是一个整数，单位是像素 px。
+     *
+     * scrollHeight 的值等于该元素在不使用滚动条的情况下为了适应视口中所用内容所需的最小高度。
+     * 高度的度量方式与 clientHeight 相同：
+     *
+     * -> 包括元素的内边距，但不包括元素的边框、外边距以及水平滚动条（如果存在）。
+     *    它也包括 ::before 和 ::after 这样的伪元素的高度。
+     *    如果元素的内容不需要垂直滚动条就可以容纳，则其 scrollHeight 等于 clientHeight。
      *
      * -> 如果容器中的内容没有溢出的情况下,且 overflow:hidden; 默认值。
      *    则和clientWidth/clientHeight一模一样
      *
-     * 同一个浏览器，内容如果不溢出，我们是否设置overflow='scroll'
-     * 对于最终的结果也是有影响的。不同的浏览器种我们获取的结果也不同,因为chrome 和  edge的默认滚动条宽度不同。
+     * -> 如果容器中的内容有溢出，设置了overflow:hidden; 我们获取的结果是如下规则：
+     *    scrollWidth： 左填充(padding-left) + 真实内容的高度（包含溢出）+右填充(padding-left)
+     *    scrollHeight：上填充(padding-top) + 真实内容的高度（包含溢出）+下填充(padding-top)
      *
-     * scrollHeight 的值等于该元素在不使用滚动条的情况下为了适应视口中所用内容所需的最小高度。
-     * 高度的度量方式与 clientHeight 相同：
-     *    -> 包括元素的内边距，但不包括元素的边框、外边距以及水平滚动条（如果存在）。
-     *    它也包括 ::before 和 ::after 这样的伪元素的高度。
-     *    如果元素的内容不需要垂直滚动条就可以容纳，则其 scrollHeight 等于 clientHeight。
-     *
-     * -> 如果容器中的内容有溢出，我们获取的结果是如下规则：
+     * -> 如果容器中的内容有溢出，设置了overflow:scroll; 我们获取的结果是如下规则：
      *    scrollWidth： 真实内容的高度（包含溢出）+ 左填充(padding-left)
      *    scrollHeight：真实内容的高度（包含溢出）+ 上填充(padding-top)
      *
      * -> scrollLeft/scrollTop：滚动条卷去的高度和宽度。
      *    滚动条在拉动的过程中，有一部分看不到了，看不到的那一部分就是卷去的高度和宽度
+     *
+     * 同一个浏览器，我们是否设置overflow='hidden'对于最终的结果是有影响的。
+     *    不同的浏览器种我们获取的结果也可能不同。
      */
 
   </script>
