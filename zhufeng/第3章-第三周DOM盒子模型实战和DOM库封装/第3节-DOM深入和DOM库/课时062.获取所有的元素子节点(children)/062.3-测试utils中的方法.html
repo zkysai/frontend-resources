@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>获取某一个容器中的元素子节点</title>
+</head>
+<body>
+    <div id="box1">
+        <div>001</div>
+        <div>002</div>
+        <div>003</div>
+        <!--我是注释-->
+        <p>004</p>
+        <p>005</p>
+        <p>006</p>
+    </div>
+
+    <script src="../js/utils.js"></script>
+    <script>
+        const _box1 = document.querySelector("#box1");
+        let divs = utils.children(_box1,'p');
+        console.log(divs);
+
+    </script>
+</body>
+</html>

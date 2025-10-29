@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>获取某一个容器中的元素子节点</title>
+</head>
+<body>
+    <div id="box1">
+        <!--我是注释-->
+        <p>001</p>
+        <p>002</p>
+        <p>003</p>
+    </div>
+
+    <script>
+        //console.log(null === null); //true
+        //console.log(undefined === undefined); //true
+
+        const _box1 = document.querySelector("#box1");
+
+        //这是一个类数组
+        console.log(_box1.children); //HTMLCollection(3) [p, p, p]
+
+        let arr = children(_box1);
+        console.log(arr);
+
+        function children(ele){
+            let arr = []; // 要求返回一个数组
+            if (ele === null || ele ===undefined)
+                throw new Error("不能传递null 或 undefined");
+
+            //判断当前浏览器的版本号
+            if (/MSIE (6|7|8)/i.test(navigator.userAgent)){
+                //->首先获取该元素的子节点（childNodes）,在所有的子节点中把元素节点过滤出来(nodeType===1)
+                let nodeList = ele.childNodes;
+                for (let i = 0 ,len=nodeList.length;i<len;i++){
+                    let curNode = nodeList[i];
+                    if (curNode.nodeType === 1){
+                        arr[arr.length] = curNode;
+                    }
+                }
+                return arr;
+            }
+
+            console.log("<=================>");
+            //-> 标准浏览器中，直接使用children属性即可，但是这样获取的是一个元素集合(HTMLCollection)
+            //-> 它是一个类数组，为了和IE6-8下保持一致，我们使用借用数组原型上的slice，实现把类数组转成数组
+            arr = Array.prototype.slice.call(ele.children);
+            return arr;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Title</title>
+</head>
+<body>
+
+    <ul id="movie-list">
+        <li>aaa001</li>
+        <li>aaa002</li>
+        <li>aaa003</li>
+    </ul>
+
+    <script>
+        //获取元素的方法
+        // document.body 获取整个body 简洁属性
+        // document.documentElement 获取整个HTML 的见解属性
+        // context.querySelector / context.querySelectAll
+        // ==>context.querySelectAll 通过这个获取的节点集合不存在DOM映射
+        let _movieList1 = document.getElementById("movie-list");
+        console.log(_movieList1);
+
+        let _movieList2 = document.querySelector("#movie-list");
+        console.log(_movieList2);
+
+        //-> 描述节点 和 节点 之间的关系的属性(在标准浏览器中会把空格和换行当作文本节点处理)
+        /**
+         * childNodes
+         * children -> 在IE 6-8下获取的结果 和 标准浏览器获取的结果不一致
+         * parentNode
+         * nextSibling | nextElementSibling
+         * previousSibling | previousElementSibling
+         *
+         * firstChild / firstElementChild
+         * lastChild / lastElementChild
+         */
+
+        //-> DOM的增删改
+        //createElement ，document.createDocumentFragment()
+        //appendChild,insertBefore
+        //cloneNode(true/false)
+        //replaceChild
+        //removeChild
+        //get/set/removeAttribute
+
+        //-> DOM的盒子模型属性
+        //clientWidth/clientHeight -- clientLeft/clientTop
+        //offstWidth/offsetHeight -- offetLeft/offetTop -- offsetParent
+        //scrollWidth/scrollHeight -- scrollLeft/scrollTop
+
+        //window.getComputedStyle();
+
+        //-> 接下来的所有的方法在JQuery中的作用和方法名一模一样。
+        //-> function children -> 获取某一个容器中所有的元素子节点（还可以筛选出指定标签名）
+        //-> getElementsByClass -> 通过元素的样式类名获取一组元素（兼容所有浏览器）
+        //-> 获取上一个哥哥元素节点(prev), 获取下一个弟弟元素节点(next)获取所有的
+        //   哥哥元素节点(prevAll)、获取所有的弟弟元素节点(nextAll)、获取相邻的两个元素节点
+        //   (sibling)、获取所有的兄弟元素节点(siblings)
+
+        //-> 获取第一个元素子节点(firstChild),获取最后一个元素子节点(lastChild)
+        //-> index获取当前元素的索引
+
+        //prepend -> 和 appendChild对应增加到某一个容器的开头。
+        //insertAfter -> insertBefore对应曾艾佳到容器中某一个元素后面。
+        //addClass 增加样式类名
+        //removeClass删除样式类名
+        //hasClass 判断是否存在某一个样式类名
+
+        //->Jquery: css方法
+        //getCss
+        //setCss
+        //setGroupCss
+    </script>
+</body>
+</html>
