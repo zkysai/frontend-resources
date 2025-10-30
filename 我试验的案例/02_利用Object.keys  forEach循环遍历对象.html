@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>02_利用Object.keys  forEach循环遍历对象(重要)</title>
+</head>
+<body>
+<script>
+
+
+    /**
+     * 在JavaScript中，for...in循环用于遍历对象的所有可枚举属性，
+     * 包括继承的可枚举属性。这种遍历方式可以访问到对象的键名(key)，
+     * 然后通过键名来获取对应的键值(value)。
+     */
+    Object.prototype.course = 'Java';
+
+    let obj = {
+        username: 'fbb',
+        pwd: '123456',
+        age: 12
+    };
+
+    /**
+     * key：username,value:fbb
+     * key：pwd,value:123456
+     * key：age,value:12
+     */
+
+    /**
+     * 用于获取对象自身所有的可枚举的属性值，但不包括原型中的属性，然后返回一个由属性名组成的数组。
+     * 注意它同for..in一样不能保证属性按对象原来的顺序输出。
+     * （可枚举-自身）
+     */
+    Object.keys(obj).forEach(key => {
+        console.log(`key：${key},value:${obj[key]}`);
+    })
+
+    /**
+     * key:username，value:fbb
+     * key:pwd，value:123456
+     * key:age，value:12
+     * key:course，value:Java
+     */
+    for(let key in obj){
+        console.log(`key:${key}，value:${obj[key]}`);
+    }
+</script>
+</body>
+</html>

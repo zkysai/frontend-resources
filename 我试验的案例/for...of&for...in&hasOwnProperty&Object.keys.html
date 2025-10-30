@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //js中有很多循环，解决各种历史遗留问题。
+        //for...in  for...of循环 有什么区别？？？
+        // for...in循环主要是用来遍历 对象
+        let arr01 = [5,6,0,7,1];  //数组的本质：{"0":5,"1":6,"2":0,"3":7,"4":1,"length":5}
+
+        //arr01 数组 类型 Array，可以使用 数组的各种方法,push,pop ,unshift,shift ,splice , slice ……
+        console.log(arr01.length); //length是不可枚举的属性
+
+        for(let key in arr01){
+            console.log(`key->${key},value->${arr01[key]}`); //0,1,2,3,4
+        }
+        /**
+         * key->0,value->5
+         * key->1,value->6
+         * key->2,value->0
+         * key->3,value->7
+         * key->4,value->1
+         */
+        //给数组新增一个属性，不是正常操作。
+        arr01.name = "fbb";
+        console.log(arr01.name); //fbb
+        console.log(arr01.length); //length长度并没有变化
+
+        // {"0":5,"1":6,"2":0,"3":7,"4":1,"name":"fbb","length":5}
+        //但是for...in循环可以遍历出来
+        for(let key in arr01){
+            console.log(`key->${key},value->${arr01[key]}`);
+
+            //console.log(arr01[key]);
+        }
+
+        /*
+        key->0,value->5
+        key->1,value->6
+        key->2,value->0
+        key->3,value->7
+        key->4,value->1
+        key->name,value->fbb
+         */
+        console.log("===================for...of=======================")
+        for(let num of arr01){
+            console.log(num); //for...of循环打印的不是key值，而是数组存储的值本身。，最关键的是，fbb没有被循环出来。
+        }
+
+        console.log("===================普通for循环=======================")
+        for(let i =0 ;i<arr01.length;i++){
+            console.log(arr01[i]);
+        }
+
+        console.log("================for...in 主要是用来 遍历对象的==========================")
+        /**
+         * for...in 用于遍历对象的可枚举属性，但不保证顺序且可能遍历到原型属性
+         *     可以和hasOwnProperty()方法来检查属性是否为对象自身所有。
+         * for...of用于遍历数组，Set，Map等结构，循环出的是键值。
+         */
+
+        let xxx = {"name":"fbb"};  //xxx 类是Object类的对象
+        xxx.age = 20;
+
+        for(let key in xxx){
+            console.log(xxx[key]);
+        }
+        console.log("-------------------------------------------------")
+        //for..in 循环 可以列出整个对象自身的属性，以及 原型链上的属性
+
+        Object.prototype.sex = "男";
+        for(let key in xxx){
+            console.log(xxx[key]);
+        }
+        console.log("-------------------------------------------------")
+        for(let key in xxx){
+            if(xxx.hasOwnProperty(key)){ // 判断xxx对象自身 有没有 key这个属性，如果是返回true，否则返回false
+                console.log(xxx[key]);
+            }
+        }
+        console.log(xxx.hasOwnProperty("name")); //true
+        console.log(xxx.hasOwnProperty("age")); //true
+        console.log(xxx.hasOwnProperty("sex"));//false
+
+        console.log("-------------------------------------------------")
+
+        //得到xxx身上所有的key 的值， 通过forEach循环
+        let keyAry = Object.keys(xxx);
+        console.log(keyAry); //['name', 'age']
+
+        Object.keys(xxx).forEach(key => {
+            console.log(xxx[key]); //这种写法也没打印sex属性
+        });
+    </script>
+</body>
+</html>

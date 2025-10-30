@@ -1,0 +1,48 @@
+Content-Type
+    application/json
+	application/x-www-form-urlencoded
+
+<form>
+	<p>
+		用户名：<input type="text" v-model="emp.name">
+	</p>
+	<p>
+		年龄：<input type="number" v-model="emp.age">
+	</p>
+	<p>
+		<input type="button" value="提交" @click="add">
+	</p>
+</form>
+
+<script>
+	let emp2 = {xb:'m'};  //Object
+
+	let vm = new Vue({
+		ele:"#app",
+		data:{
+			emp:{
+				id:0,
+				name:""
+				age:0
+			}
+		},
+		methods:{
+			add:function(){
+			axious({
+				method:"POST",
+				url:"",
+					data:this.emp,
+					headers:{
+						'Content-Type':"application/x-www-form-urlencoded"
+					},
+					transformRequest:function(data){
+						data = Qs.stringify(data);
+						return data;
+					}
+				});
+			},
+			selectAll:function(){
+
+			}
+		}
+	});

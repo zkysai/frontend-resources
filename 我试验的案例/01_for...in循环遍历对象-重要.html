@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>for...in循环案例(重要)</title>
+</head>
+<body>
+<script>
+    /**
+     * 在JavaScript中，for...in循环用于遍历对象的所有可枚举属性，
+     * 包括继承的可枚举属性。这种遍历方式可以访问到对象的键名(key)，
+     * 然后通过键名来获取对应的键值(value)。
+     */
+    Object.prototype.course = 'Java';
+
+    let obj = {
+        username: 'fbb',
+        pwd: '123123',
+        age: 12
+    };
+
+    /**
+     * 键是username，值是fbb
+     * 键是pwd，值是123123
+     * 键是age，值是12
+     * 键是course，值是Java
+     */
+    for(let key in obj){
+        console.log(`键是${key}，值是${obj[key]}`);
+    }
+
+    console.log('------------Object.hasOwnProperty----------------');
+
+    //Object.prototype.hasOwnProperty()
+    //返回一个布尔值，表示对象自有属性（而不是继承来的属性）中是否具有指定的属性。
+    const obj2 = {};
+    obj2.property1 = 42;
+
+    console.log(obj2.hasOwnProperty("property1")); //true
+    console.log(obj2.hasOwnProperty("toString")); //false
+    console.log(obj2.hasOwnProperty("hasOwnProperty")); //false
+
+    console.log('----------------------------');
+    /**
+     * 键是username，值是fbb
+     * 键是pwd，值是123123
+     * 键是age，值是12
+     */
+    for(let key in obj){
+        if(obj.hasOwnProperty(key))
+            console.log(`键是${key}，值是${obj[key]}`);
+    }
+</script>
+</body>
+</html>

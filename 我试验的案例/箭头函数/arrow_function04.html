@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+
+    /**
+     *箭头函数的this指向是根据定义时所在的作用域决定的，
+     *而不是根据调用方式决定的。箭头函数不绑定自己的this，而是继承自外层作用域。
+     **/
+   function Person(name,age){
+      this.name = name;
+      this.age = age;
+
+      this.run=function(){
+        console.log(this,'run');
+      }
+
+      this.sleep = ()=>{
+        console.log(this,"sleep");
+      }
+   }
+
+   Person.prototype.aaa = function(){
+     console.log(this,"aaa");
+   }
+
+   // 箭头函数 不创建独立的this上下文，
+   // 其内部的 this直接继承自 定义时所在的外层作用域（词法作用域）。
+   Person.prototype.bbb = ()=>{
+     console.log(this,"bbb"); //window
+   }
+
+   let fbb = new Person('范冰冰',20);
+   fbb.run();
+   fbb.sleep();
+
+   fbb.aaa();
+   fbb.bbb(); //window
+
+  </script>
+</body>
+</html>

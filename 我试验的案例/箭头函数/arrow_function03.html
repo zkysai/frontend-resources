@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+   let o = {
+     hp:15,
+     att:200,
+     self:this,//window
+     attFn:function(){
+       console.log('我的攻击力是:',this.att);
+     },
+     attFn2:()=>{
+       console.log(this); //window
+       console.log('我的攻击力是:',o.att);
+     }
+   }
+
+   console.log(o.self);//window
+   o.attFn();
+   o.attFn2();
+  </script>
+</body>
+</html>

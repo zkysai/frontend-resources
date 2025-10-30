@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function fn1(){
+      console.log(this);
+    }
+
+    let fn2 = ()=>{
+      console.log(this);
+    }
+
+    //这么调用 this 都指向 window对象 没有区别
+    fn1(); //window
+    fn2(); //window
+
+  </script>
+</body>
+</html>
