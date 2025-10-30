@@ -177,24 +177,38 @@
   color: #00a4ff;
 }
 
-.banner .sidebar a::after{
+.banner .sidebar li{
+  position: relative;
+}
+
+.banner .sidebar .icon-arrow-right{
+  font-size: 10px;
   position: absolute;
   right: 20px;
-  top: 20px;
-  display: block;
-  content: '';
-  width: 10px;
-  height: 10px;
-  background:url("../imgs/right-arrow.png") no-repeat center;
+  top: 0px;
 }
 
-.banner .sidebar a.active::after{
-  background:url("../imgs/right-arrow-active.png") no-repeat center;
-}
 
-.banner .sidebar a:hover::after{
-  background:url("../imgs/right-arrow-active.png") no-repeat center;
-}
+  /*
+  .banner .sidebar a::after{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background:url("../imgs/right-arrow.png") no-repeat center;
+  }
+
+  .banner .sidebar a.active::after{
+    background:url("../imgs/right-arrow-active.png") no-repeat center;
+  }
+
+  .banner .sidebar a:hover::after{
+    background:url("../imgs/right-arrow-active.png") no-repeat center;
+  }
+  */
 
 /*====右侧课程开始====*/
 .banner .right{
