@@ -33,6 +33,10 @@ input,button{
   outline: none;
 }
 
+button{
+  cursor: pointer;
+}
+
 input[type=search]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
