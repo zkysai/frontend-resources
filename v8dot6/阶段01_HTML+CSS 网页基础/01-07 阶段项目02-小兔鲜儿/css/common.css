@@ -1,0 +1,33 @@
+/*公共的样式 页面的头部和底部*/
+
+/*版心*/
+.wrapper{
+  margin: 0 auto;
+  width: 1240px;
+}
+
+/* 全局变量:准备两个颜色*/
+:root{
+  /*灰色变量*/
+  --ga_01:#a1a1a1;
+  /*绿色变量*/
+  --gr_01:#00BE9A;
+}
+
+/*==============> header区域开始 <==============*/
+body{
+  background-color: pink;
+}
+
+.header .shortcut{
+  background-color: #333;
+  height: 52px;
+}
+
+.header .nav{
+  height: 132px;
+  background-color: white;
+}
+
+/*==============> header区域结束 <==============*/
+
