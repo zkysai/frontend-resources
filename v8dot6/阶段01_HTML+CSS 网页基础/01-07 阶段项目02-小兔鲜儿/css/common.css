@@ -65,10 +65,14 @@ body{
 }
 
 .header .shortcut li a i{
+  /*转换为行内块,然后再跟文字居中对齐
+  此时再通过margin-top值来调节移动盒子,
+  不会影响手机版这三个字*/
+  display: inline-block;
   font-size: 16px;
   /*让小图标和文字垂直居中*/
   vertical-align: middle;
+  margin-top: -1px;
 }
-
 /*==============> header区域结束 <==============*/
 
