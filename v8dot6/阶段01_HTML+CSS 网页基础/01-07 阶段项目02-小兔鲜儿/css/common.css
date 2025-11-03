@@ -9,9 +9,10 @@
 /* 全局变量:准备两个颜色*/
 :root{
   /*灰色变量*/
-  --ga_01:#a1a1a1;
+  --ga:#a1a1a1;
   /*绿色变量*/
-  --gr_01:#00BE9A;
+  --gr:#00BE9A;
+  --gr_font:#5EB69C;
 }
 
 /*==============> header区域开始 <==============*/
@@ -27,6 +28,46 @@ body{
 .header .nav{
   height: 132px;
   background-color: white;
+}
+
+.header .shortcut .wrapper{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header .shortcut ul{
+  display: flex;
+  width: 100%;
+  height: 52px;
+  justify-content: flex-end;
+  --background-color: green;
+  align-items: center;
+}
+
+.header .shortcut a{
+  height: 20px;
+  font-size: 14px;
+  color:#fff;
+  padding:0 14.5px;
+  border-right:1px solid #999;
+}
+
+.header .shortcut li:first-child a{
+  color: var(--gr_font);
+}
+
+.header .shortcut li:last-child a{
+  border-right:none;
+}
+
+.header .shortcut li a:hover{
+  color: var(--gr_font);
+}
+
+.header .shortcut li a i{
+  font-size: 16px;
+  /*让小图标和文字垂直居中*/
+  vertical-align: middle;
 }
 
 /*==============> header区域结束 <==============*/
