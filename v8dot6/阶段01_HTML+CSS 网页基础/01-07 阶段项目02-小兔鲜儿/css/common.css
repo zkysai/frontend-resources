@@ -15,27 +15,27 @@
   --gr_font:#5EB69C;
 }
 
-/*==============> header区域开始 <==============*/
+/*==============> 快捷导航区域开始 <==============*/
 body{
   background-color: pink;
 }
 
-.header .shortcut{
+.shortcut{
   background-color: #333;
   height: 52px;
 }
 
-.header .nav{
+.shortcut .nav{
   height: 132px;
   background-color: white;
 }
 
-.header .shortcut .wrapper{
+.shortcut .wrapper{
   display: flex;
   justify-content: flex-end;
 }
 
-.header .shortcut ul{
+.shortcut ul{
   display: flex;
   width: 100%;
   height: 52px;
@@ -44,7 +44,7 @@ body{
   align-items: center;
 }
 
-.header .shortcut a{
+.shortcut a{
   height: 20px;
   font-size: 14px;
   color:#fff;
@@ -52,27 +52,31 @@ body{
   border-right:1px solid #999;
 }
 
-.header .shortcut li:first-child a{
+.shortcut li:first-child a{
   color: var(--gr_font);
 }
 
-.header .shortcut li:last-child a{
+.shortcut li:last-child a{
   border-right:none;
 }
 
-.header .shortcut li a:hover{
+.shortcut li a:hover{
   color: var(--gr_font);
 }
 
-.header .shortcut li a i{
+.shortcut li a i{
   /*转换为行内块,然后再跟文字居中对齐
   此时再通过margin-top值来调节移动盒子,
   不会影响手机版这三个字*/
   display: inline-block;
-  font-size: 16px;
+  font-size: 19px;
   /*让小图标和文字垂直居中*/
   vertical-align: middle;
   margin-top: -1px;
 }
+/*==============> 快捷导航区域结束 <==============*/
+
+/*==============> header区域开始 <==============*/
+
 /*==============> header区域结束 <==============*/
 
