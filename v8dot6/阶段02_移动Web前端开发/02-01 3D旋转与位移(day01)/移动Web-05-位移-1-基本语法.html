@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin: 100px auto;
+      transition: all 0.5s;
+    }
+
+    .box:hover{
+      /*转换transform*/
+      /*translate（x轴方向移动值，y轴方向移动值）*/
+      /*
+        1、正负都可以
+        2、值：px单位 或 %(相对于自身宽度高度的百分数)
+      */
+      /*transform: translate(100px,100px);*/
+      /*transform: translate(-100px,-100px);*/
+      transform: translate(100%,100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
